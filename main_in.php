@@ -12,7 +12,7 @@ if(!$_SESSION['is_login']){
 <body>
 	<div id="logout_box">							
 		<table align="right" border="0" cellspacing="0" width="300">
-			<?php echo $_SESSION['nickname'];?>님<br/>
+			<?php echo $_SESSION['nickname'];?>님 환영합니다!<br/>
 			<a href="./logout.php">로그아웃</a>
     </table>
   </form>
