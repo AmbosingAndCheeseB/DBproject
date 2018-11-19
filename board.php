@@ -265,6 +265,10 @@
 						while($row = $result->fetch_assoc())
 
 						{
+							$sql2 = "select count(*) as cnt from comment where board_num =".$row['board_num'];
+							$result2 = $db ->query($sql2);
+							$row2 = $result2->fetch_assoc();
+							
 
 							$datetime = explode(' ', $row['b_date']);
 
@@ -284,11 +288,15 @@
 
 				<tr>
 
-					<td class="no"><?php echo $row['board_num']?></td>
+					<td class="no"><?php echo $row['board_num']; ?></td>
 
 					<td class="title">
 					<a href="./view.php?board_num=<?php echo $row['board_num']?>">
-					<?php echo $row['title']?></td> </a>
+					<?php echo $row['title']." ";
+					 if($num_comment)
+									{
+										print "[<font color=red><b>$num_comment</b></font>]";
+									}?></td> </a>
 
 					<td class="author"><?php echo $row['user_id']?></td>
 
@@ -321,7 +329,7 @@
 		</div>
 		<div class="paging">
 
-			<?php echo $paging ?>
+			 <?php echo $paging ?>
 
 		</div>
 		<div class="searchBox">
