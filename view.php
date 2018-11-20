@@ -120,11 +120,11 @@
 			<?php
 			}
 			?>
-			
-			<form name = "comment_form" method ="post" action = "insert_comment.php?c_num=<?php echo $row3['c_num']?>">
+	
+			<form name = "comment_form" method ="post" action = "insert_comment.php?board_num=<?php echo $bNo;?>">
 				<div id = "comment_box">
 					<li id = "comment_insert"> 덧글쓰기 </li>
-				<div id = "comment_box1"><textarea rows="5" cols="65" name="comment_content" required></textarea>
+				<div id = "comment_box1"><textarea rows="5" cols="65" name="c_content" required></textarea>
 				<button type="submit" id="btn" >덧글쓰기</button>
 				</div>
 			</form>
