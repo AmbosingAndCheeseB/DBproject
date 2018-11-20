@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="main_out.php" server="210.117.181.21:2018" local="131871936660885168" remote="131871937800000000" Dst="0" />
-<file name="view.php" server="210.117.181.21:2018" local="131871925362413947" remote="131871939600000000" Dst="0" />
+<file name="view.php" server="210.117.181.21:2018" local="131871992201753424" remote="131871991800000000" Dst="0" />
+<file name="insert_comment.php" server="210.117.181.21:2018" local="131871995516774719" remote="131871995400000000" Dst="0" />
+<file name="delete_comment.php" server="210.117.181.21:2018" local="131871981536469794" remote="131871981000000000" Dst="0" />
 </dwsync>

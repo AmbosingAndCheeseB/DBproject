@@ -106,10 +106,11 @@
 				{
 					if($_SESSION["userid"]==$row3['user_id'])
 					?>
-					<a href = "./delete_comment.php?board_num=$bNo&c_num=$row3['c_num']">[삭제]</a>";
+					<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>";
 			<?php
 				}
 				?>
+		
 				
 			</ul>
 			
