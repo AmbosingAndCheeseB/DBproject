@@ -4,4 +4,6 @@
 <file name="view.php" server="210.117.181.21:2018" local="131871992201753424" remote="131871991800000000" Dst="0" />
 <file name="insert_comment.php" server="210.117.181.21:2018" local="131871995516774719" remote="131871995400000000" Dst="0" />
 <file name="delete_comment.php" server="210.117.181.21:2018" local="131871981536469794" remote="131871981000000000" Dst="0" />
+<file name="search_result.php" server="210.117.181.21:2018" local="131871997708017685" remote="131871997200000000" Dst="0" />
+<file name="user_manage.php" server="210.117.181.21:2018" local="131872742055340527" remote="131872742400000000" Dst="0" />
 </dwsync>
