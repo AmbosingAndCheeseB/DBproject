@@ -17,6 +17,7 @@
 	{
 		$_SESSION['userid'] = $member["user_id"];
 		$_SESSION['nickname'] = $member["Name"];
+		$_SESSION['authority'] = $member["authority"]
 		$_SESSION['is_login'] = true;
 		
 		echo "<script>alert('로그인되었습니다.'); location.href='main_in.php';</script>";
