@@ -95,8 +95,8 @@
 						
 						
 								while($row = $result->fetch_assoc()){
-									
-									echo "<html>
+									?>
+									<html>
 											<body> 
 												<tr>
 													<td class = 'userid'>$row['user_id']</td>
@@ -109,8 +109,8 @@
 													</td>
 												</tr>
 											</body>
-										</html>";
-						
+										</html>
+						<?php
 								};
 							
 			?>

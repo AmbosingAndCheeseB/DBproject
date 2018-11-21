@@ -110,7 +110,15 @@
 			<?php
 				}
 				?>
-		
+			<?php
+				if(isset($_SESSION["userid"]))
+				{
+					if($_SESSION["userid"]==$row3['user_id'])
+					?>
+					<a href = "./insert_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [수정]</a>";
+			<?php
+				}
+				?>
 				
 			</ul>
 			

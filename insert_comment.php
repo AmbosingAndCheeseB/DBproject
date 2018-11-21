@@ -45,7 +45,7 @@
 		?>
 
 		<script>
-				//alert('덧글이 작성되었습니다.'); 사용자의 입장에서 불편할 것 같음.
+				//alert('덧글이 작성되었습니다.');
 				
 				location.replace("<?php echo $url?>");
 				</script>;

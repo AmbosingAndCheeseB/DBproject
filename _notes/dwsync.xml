@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
+<file name="main_in.php" server="210.117.181.21:2018" local="131871132649415074" remote="131871133200000000" Dst="0" />
+<file name="board.php" server="210.117.181.21:2018" local="131870902479102212" remote="131871133200000000" Dst="0" />
+<file name="dbconfig.php" server="210.117.181.21:2018" local="131870902479322086" remote="131871133200000000" Dst="0" />
+<file name="search_result.php" server="210.117.181.21:2018" local="131870902479631909" remote="131871133200000000" Dst="0" />
+<file name="main_out.php" server="210.117.181.21:2018" local="131871153276010590" remote="131871153600000000" Dst="0" />
+<file name="test.php" server="210.117.181.21:2018" local="131871828864065823" remote="131871828600000000" Dst="0" />
+=======
 <file name="main_out.php" server="210.117.181.21:2018" local="131871936660885168" remote="131871937800000000" Dst="0" />
 <file name="view.php" server="210.117.181.21:2018" local="131871992201753424" remote="131871991800000000" Dst="0" />
 <file name="insert_comment.php" server="210.117.181.21:2018" local="131871995516774719" remote="131871995400000000" Dst="0" />
 <file name="delete_comment.php" server="210.117.181.21:2018" local="131871981536469794" remote="131871981000000000" Dst="0" />
+<<<<<<< HEAD
 <file name="search_result.php" server="210.117.181.21:2018" local="131871997708017685" remote="131871997200000000" Dst="0" />
 <file name="user_manage.php" server="210.117.181.21:2018" local="131872742055340527" remote="131872742400000000" Dst="0" />
+=======
+>>>>>>> c4db54406960dda349149383023d277d243d333d
+>>>>>>> origin/master
 </dwsync>
