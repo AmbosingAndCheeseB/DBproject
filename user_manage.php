@@ -1,7 +1,7 @@
 <?php
 	require_once('./dbconfig.php');
 	
-	if(!($_SESSION['userid'] == 'admin' && $_SESSION[] == 77))
+	if(!($_SESSION['userid'] == 'admin' && $_SESSION['authority'] == 77))
 	{
 		?>
 		<script>
@@ -95,8 +95,13 @@
 						
 						
 								while($row = $result->fetch_assoc()){
+<<<<<<< HEAD
 									?>
 									<html>
+=======
+									
+									echo "<html>
+>>>>>>> origin/master
 											<body> 
 												<tr>
 													<td class = 'userid'>$row['user_id']</td>
@@ -109,8 +114,13 @@
 													</td>
 												</tr>
 											</body>
+<<<<<<< HEAD
 										</html>
 						<?php
+=======
+										</html>";
+						
+>>>>>>> origin/master
 								};
 							
 			?>
