@@ -1,17 +1,19 @@
 <?php   
 include "dbconfig.php";
 session_start();
-if($_SESSION['is_login']){
-	echo "<script>location.href='main_in.php';</script>";
-}
 ?>
+
 <!DOCTYPE html>
 <head>
-	<title>로그인 전 메인페이지</title>
+	<title>메인페이지</title>
 </head>
 <body>
-	<div id="login_box">							
-			<form method="post" action="login_ok.php">
+	<div id="login_box">	
+	
+	<?php
+	
+	if(!$_SESSION['is_login']){
+		echo '	<html><body> <form method="post" action="login_ok.php">
 				<table align="right" border="0" cellspacing="0" width="300">
         			<tr>
             			<td width="130" colspan="1"> 
@@ -32,7 +34,30 @@ if($_SESSION['is_login']){
            </td>
         </tr>
     </table>
-  </form>
+	</form> </body></html>'; }
+	
+	else if($_SESSION['is_login']){
+		
+		if($_SESSION['authority']==77){
+			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
+			echo $_SESSION['nickname'];
+			echo '님 환영합니다!<br/>
+				<a href="./user_manage.php">관리자 페이지</a>
+				<br>
+				<a href="./logout.php">로그아웃</a>
+			</table> </body></html>';
+		}
+		else{
+			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
+			echo $_SESSION['nickname'];
+			echo '님 환영합니다!<br/>
+				<a href="./logout.php">로그아웃</a>
+			</table> </body></html>';}
+		
+	}
+	
+  ?>
+  
 </div>
 
 	<div id="searchbox">						
