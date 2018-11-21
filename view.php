@@ -79,6 +79,72 @@
 			<span id="boardVisit">조회: <?php echo $row['visit']?></span>
 
 		</div>
+		
+
+		
+		
+		
+		<div id="boardContent"><?php echo $row['b_content']?></div>
+		<?php
+			
+			$sql3 = "select * from comment where board_num = ". $bNo;
+			
+			$result3 = $db -> query($sql3);
+			
+			
+			while($row3 = $result3 ->fetch_assoc())
+			{
+				?>
+				
+			<div id = comment_writer_title">
+			<ul>
+				<li id = "writer_title1"><?php echo $row3['user_id'];?></li>
+				<li id = "writer_title2"><?php echo $row3['c_date'];?></li>
+				&nbsp;&nbsp;
+			<?php
+				if(isset($_SESSION["userid"]))
+				{
+					if($_SESSION["userid"]==$row3['user_id'])
+					?>
+					<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>";
+			<?php
+				}
+				?>
+			<?php
+				if(isset($_SESSION["userid"]))
+				{
+					if($_SESSION["userid"]==$row3['user_id'])
+					?>
+					<a href = "./insert_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [수정]</a>";
+			<?php
+				}
+				?>
+				
+			</ul>
+			
+			</div>
+			
+			<div id = "comment_content"><?php echo $row3['c_content'];?></div>
+			
+			<?php
+			}
+			?>
+	
+			<form name = "comment_form" method ="post" action = "insert_comment.php?board_num=<?php echo $bNo;?>">
+				<div id = "comment_box">
+					<li id = "comment_insert"> 덧글쓰기 </li>
+				<div id = "comment_box1"><textarea rows="5" cols="65" name="c_content" required></textarea>
+				<button type="submit" id="btn" >덧글쓰기</button>
+				</div>
+			</form>
+		
+			
+		
+		
+		
+		
+		
+		
 		<script>
 			function del(href)
 			{
@@ -89,8 +155,9 @@
 			}
 			
 		</script>
-
-		<div id="boardContent"><?php echo $row['b_content']?></div>
+		
+		
+		
 		<div class="btnSet">
 		
 		

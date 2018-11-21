@@ -19,8 +19,14 @@
                 $result = $db->query($sql);
                      
                 if(!($s_result = $result->fetch_array())){
-                        
-                    printf("해당하는 항목이 없습니다.");
+                        ?>
+					<script>
+						alert("해당하는 검색 결과가 없습니다.");
+						history.back();
+						
+					</script>
+                    
+					<?php
                  }
                      
 			}
