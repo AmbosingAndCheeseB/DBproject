@@ -1,5 +1,6 @@
 <?php
 	include "dbconfig.php";
+	session_start();
 
 	$hospital = $_GET['h_id'];
 	$sql = 'select * from hospital where Hospital_ID = "'.$hospital.'" ';
@@ -25,3 +26,57 @@
 		echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
 	}
 ?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<title>상세정보 페이지</title>
+
+	<link rel="stylesheet" href="./css/normalize.css" />
+
+	<link rel="stylesheet" href="./css/board.css" />
+
+</head>
+	<body>
+		
+		<script>
+			function back()
+			{
+				history.go(-1);
+			}
+		
+		</script>
+		
+		
+		
+		<div class="btnSet">
+
+
+				<?php
+				if(isset($_SESSION['authority']))
+				{
+					if($_SESSION["authority"] == 77)
+					{
+						?>
+						<a href="./hospital_modify.php?hospital_id=<?php echo $hospital?>">수정</a>
+			
+			
+						<a href="./hospital_delete?hospital_id=<?php echo $hospital?>')">삭제</a>
+						<?php
+					}
+				}
+				?>
+		
+			
+			<INPUT type="button" name="back_btn" value="목록" onclick = 'back()'>
+			
+			
+			
+		</body>
+
+</html>
+	

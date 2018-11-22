@@ -20,7 +20,7 @@
 
 				alert('오류가 발생했습니다.');
 
-				history.back();
+				loaction.replace("./board.php");
 
 			</script>
 
@@ -101,24 +101,12 @@
 				<li id = "writer_title1"><?php echo $row3['user_id'];?></li>
 				<li id = "writer_title2"><?php echo $row3['c_date'];?></li>
 				&nbsp;&nbsp;
-			<?php
-				if(isset($_SESSION["userid"]))
-				{
-					if($_SESSION["userid"]==$row3['user_id'] || $_SESSION['authority'] == 77)
-					?>
-					<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>";
-			<?php
-				}
-				?>
-			<?php
-				if(isset($_SESSION["userid"]))
-				{
-					if($_SESSION["userid"]==$row3['user_id'])
-					?>
-					<a href = "./insert_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [수정]</a>";
-			<?php
-				}
-				?>
+		
+				<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>
+		
+		
+					
+		
 				
 			</ul>
 			

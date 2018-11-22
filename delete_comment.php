@@ -15,7 +15,7 @@
 	$row1 = $result1 -> fetch_assoc();
 
 	
-	if($_SESSION['userid']== $row1['user_id'])
+	if($_SESSION['userid']== $row1['user_id'] || $_SESSION['authority'] == 77)
 	{
 		$sql2 = 'delete from comment where c_num ='. $c_num .' and board_num ='.$bNo;
 

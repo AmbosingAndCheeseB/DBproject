@@ -1,4 +1,9 @@
 <?php
+	header("Pragma: no-cache");   
+
+	header("Cache-Control: no-cache,must-revalidate");   
+
+
 	header('Content-Type: text/html; charset=utf-8');
 	
 	$db = new mysqli('210.117.181.21', 's201615383', 'tjdduswldnjs12!', 's201615383');

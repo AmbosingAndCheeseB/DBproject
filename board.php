@@ -1,8 +1,8 @@
 <?php
 	
 	session_start();
+	unset($REQUEST_METHOD);
 
-	header("Pragma: no-cache");
 
 	require_once("./dbconfig.php");
 	

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="view.php" server="210.117.181.21:2018" local="131873603629789159" remote="131873603400000000" Dst="0" />
-<file name="insert_comment.php" server="210.117.181.21:2018" local="131871995516774719" remote="131871995400000000" Dst="0" />
-<file name="delete_comment.php" server="210.117.181.21:2018" local="131871981536469794" remote="131871981000000000" Dst="0" />
+<file name="view.php" server="210.117.181.21:2018" local="131873631934444749" remote="131873631600000000" Dst="0" />
+<file name="insert_comment.php" server="210.117.181.21:2018" local="131872743883089917" remote="131873631000000000" Dst="0" />
+<file name="delete_comment.php" server="210.117.181.21:2018" local="131873634627558059" remote="131873634000000000" Dst="0" />
 <file name="search_result.php" server="210.117.181.21:2018" local="131871997708017685" remote="131871997200000000" Dst="0" />
 <file name="user_manage.php" server="210.117.181.21:2018" local="131872861256494621" remote="131872861200000000" Dst="0" />
 <file name="autho_down.php" server="210.117.181.21:2018" local="131872860340962485" remote="131872860000000000" Dst="0" />
 <file name="autho_up.php" server="210.117.181.21:2018" local="131872855734933227" remote="131872855200000000" Dst="0" />
-<file name="board.php" server="210.117.181.21:2018" local="131873608612684099" remote="131873608200000000" Dst="0" />
+<file name="board.php" server="210.117.181.21:2018" local="131873609828483819" remote="131873609400000000" Dst="0" />
+<file name="dbconfig.php" server="210.117.181.21:2018" local="131873613704417057" remote="131873613600000000" Dst="0" />
+<file name="detail.php" server="210.117.181.21:2018" local="131873641214331987" remote="131873640600000000" Dst="0" />
 </dwsync>
