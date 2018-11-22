@@ -56,9 +56,9 @@
 			<form action="./hospi_modify_update.php" method="post">
 				<?php
 
-					if(isset($bNo)) {
+					if(isset($hospital_id)) {
 
-						echo '<input type="hidden" name="board_num" value="' . $bNo . '">';
+						echo '<input type="hidden" name="hospital_id" value="' . $hospital_id . '">';
 
 					}
 
@@ -77,7 +77,7 @@
 
 							<th scope="row"><label for="hos_name">병원 이름</label></th>
 
-							<td class="title"><input type="text" name="hos_name" id="hos_name" value = "<?php echo isset($row['hospital_name'])?$row['hospital_name']:null?>"></td>
+							<td class="title"><input type="text" name="hos_name" id="hos_name" value = "<?php echo isset($row['hospital_name'])?$row['hospital_name']:null?>" required ></td>
 
 						</tr>
 
@@ -85,7 +85,7 @@
 
 							<th scope="row"><label for="call">병원 번호</label></th>
 
-							<td class="content"><textarea name="call" id="call"> <?php echo isset($row['Call_Number'])?$row['Call_Number']:null?></textarea></td>
+							<td class="content"><textarea name="call" id="call" required> <?php echo isset($row['Call_Number'])?$row['Call_Number']:null?>  </textarea></td>
 
 						</tr>
 						

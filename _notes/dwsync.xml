@@ -10,4 +10,5 @@
 <file name="board.php" server="210.117.181.21:2018" local="131873609828483819" remote="131873609400000000" Dst="0" />
 <file name="dbconfig.php" server="210.117.181.21:2018" local="131873613704417057" remote="131873613600000000" Dst="0" />
 <file name="detail.php" server="210.117.181.21:2018" local="131873641214331987" remote="131873640600000000" Dst="0" />
+<file name="hospital_delete.php" server="210.117.181.21:2018" local="131873697099841760" remote="131873697000000000" Dst="0" />
 </dwsync>
