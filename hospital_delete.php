@@ -22,7 +22,7 @@
 		
 		echo "<script>
 				alert(\"병원정보가 삭제되었습니다.\");
-				history.go(-1);
+				history.go(-2);
 				</script>";
 		
 

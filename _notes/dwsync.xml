@@ -9,6 +9,8 @@
 <file name="autho_up.php" server="210.117.181.21:2018" local="131872855734933227" remote="131872855200000000" Dst="0" />
 <file name="board.php" server="210.117.181.21:2018" local="131873609828483819" remote="131873609400000000" Dst="0" />
 <file name="dbconfig.php" server="210.117.181.21:2018" local="131873613704417057" remote="131873613600000000" Dst="0" />
-<file name="detail.php" server="210.117.181.21:2018" local="131873641214331987" remote="131873640600000000" Dst="0" />
-<file name="hospital_delete.php" server="210.117.181.21:2018" local="131873697099841760" remote="131873697000000000" Dst="0" />
+<file name="detail.php" server="210.117.181.21:2018" local="131873718031140738" remote="131873717400000000" Dst="0" />
+<file name="hospital_delete.php" server="210.117.181.21:2018" local="131873720606009854" remote="131873720400000000" Dst="0" />
+<file name="hospital_modify.php" server="210.117.181.21:2018" local="131873713493495092" remote="131873713200000000" Dst="0" />
+<file name="hos_modi_update.php" server="210.117.181.21:2018" local="131873714749506086" remote="131873715600000000" Dst="0" />
 </dwsync>

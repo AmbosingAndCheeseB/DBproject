@@ -2,7 +2,7 @@
 
 	require_once("./dbconfig.php");
 	
-	$hospital_id = $_GET['hostpital_id'];
+	$hospital_id = $_GET['hospital_id'];
 	
 	$sql = 'select * from hospital where hospital_id = '. $hospital_id;
 
@@ -53,7 +53,7 @@
 
 		<div id="boardWrite">
 
-			<form action="./hospi_modify_update.php" method="post">
+			<form action="./hos_modi_update.php" method="post">
 				<?php
 
 					if(isset($hospital_id)) {
@@ -66,7 +66,7 @@
 
 				<table id="boardWrite">
 
-					<caption class="readHide">병원이름 수정</caption>
+					<caption class="readHide">병원정보 수정</caption>
 
 					<tbody>
 
@@ -77,7 +77,16 @@
 
 							<th scope="row"><label for="hos_name">병원 이름</label></th>
 
-							<td class="title"><input type="text" name="hos_name" id="hos_name" value = "<?php echo isset($row['hospital_name'])?$row['hospital_name']:null?>" required ></td>
+							<td class="title"><input type="text" name="hos_name" id="hos_name" value = "<?php echo isset($row['Hospital_Name'])?$row['Hospital_Name']:null?>" required ></td>
+
+						</tr>
+						
+						
+						<tr>
+
+							<th scope="row"><label for="hos_addr">병원 주소</label></th>
+
+							<td class="content"><textarea name="call" id="call" required> <?php echo isset($row['Address'])?$row['Address']:null?>  </textarea></td>
 
 						</tr>
 
@@ -93,7 +102,7 @@
 
 							<th scope="row"><label for="hos_mon">월요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_mon" id="hos_mon" value = "<?php echo isset($row2['monday'])?$row2['monday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_mon" id="hos_mon" value = "<?php echo isset($row2['Monday'])?$row2['Monday']:null?>"></td>
 
 						</tr>
 						
@@ -101,7 +110,7 @@
 
 							<th scope="row"><label for="hos_tue">화요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_tue" id="hos_tue" value = "<?php echo isset($row2['tuesday'])?$row2['tuesday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_tue" id="hos_tue" value = "<?php echo isset($row2['Tuesday'])?$row2['Tuesday']:null?>"></td>
 
 						</tr>
 						
@@ -109,7 +118,7 @@
 
 							<th scope="row"><label for="hos_wed">수요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_wed" id="hos_wed" value = "<?php echo isset($row2['wednesday'])?$row2['wednesday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_wed" id="hos_wed" value = "<?php echo isset($row2['Wednesday'])?$row2['Wednesday']:null?>"></td>
 
 						</tr>
 						
@@ -117,7 +126,7 @@
 
 							<th scope="row"><label for="hos_thr">목요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_thr" id="hos_thr" value = "<?php echo isset($row2['thursday'])?$row2['thursday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_thr" id="hos_thr" value = "<?php echo isset($row2['Thursday'])?$row2['Thursday']:null?>"></td>
 
 						</tr>
 						
@@ -125,7 +134,7 @@
 
 							<th scope="row"><label for="hos_fri">금요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_fri" id="hos_fri" value = "<?php echo isset($row2['friday'])?$row2['friday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_fri" id="hos_fri" value = "<?php echo isset($row2['Friday'])?$row2['Friday']:null?>"></td>
 
 						</tr>
 						
@@ -133,7 +142,7 @@
 
 							<th scope="row"><label for="hos_sat">토요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_sat" id="hos_sat" value = "<?php echo isset($row2['saturday'])?$row2['saturday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_sat" id="hos_sat" value = "<?php echo isset($row2['Saturday'])?$row2['Saturday']:null?>"></td>
 
 						</tr>
 						

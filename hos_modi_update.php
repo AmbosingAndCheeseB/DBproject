@@ -2,7 +2,9 @@
 
 	require_once("./dbconfig.php");
 	
-	$hospital_id = $_GET['hostpital_id'];
+	$hospital_id = $_POST['hospital_id'];
+
+	$Address = $_POST['hos_addr'];
 	
 	$hospital_name = $_POST['hos_name'];
 
@@ -26,9 +28,11 @@
 
 	
 
+	
 
 
-	$sql = 'update hospital set hospital_name="' . $hosiptal_name . '", call_number = "' . $hospital_call . '" where hospital_id = ' . $hospital_id;
+
+	$sql = 'update hospital set hospital_name="' . $hospital_name . '", call_number = "' . $hospital_call . '", address = "'. $Address . '" where hospital_id = ' . $hospital_id;
 		
 	$sql2 = 'update time set monday = "'. $monday .'" , tuesday = "'. $tuesday .'", wednesday = "'. $wednesday .'", thursday = "'. $thursday .'", friday = "'. $friday .'", saturday = "'. $saturday .'", sunday = "'. $sunday .'", public_holiday = "'. $public_day .'" where hospital_id = '.$hospital_id;
 		
@@ -39,7 +43,7 @@
 	$result2 = $db -> query($sql2);
 
 
-	if($result && $result2)
+	if($result&& $result2)
 	{
 		?>
 		<script>

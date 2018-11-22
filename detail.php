@@ -18,6 +18,7 @@
 	$sql = 'select Hospital_Name from hospital where Hospital_ID = "'.$hospital.'" ';
 	$result = $db->query($sql);
 	$temp = $result->fetch_array();
+
 	
 	$sql = 'select * from board where B_content like "%'.$temp[0].'%" ';
 	$result = $db->query($sql);
@@ -65,7 +66,7 @@
 						<a href="./hospital_modify.php?hospital_id=<?php echo $hospital?>">수정</a>
 			
 			
-						<a href="./hospital_delete.php?hospital_id=<?php echo $hospital?>')">삭제</a>
+						<a href="./hospital_delete.php?hospital_id=<?php echo $hospital?>">삭제</a>
 						<?php
 					}
 				}
