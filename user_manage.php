@@ -1,7 +1,10 @@
 <?php
 	require_once('./dbconfig.php');
-	
-	if(!($_SESSION['userid'] == 'admin' && $_SESSION['authority'] == 77))
+
+	session_start();
+
+
+	if(($_SESSION['userid'] != 'admin' || $_SESSION['authority'] != 77))
 	{
 		?>
 		<script>
@@ -12,7 +15,7 @@
 <?php
     }
 	   
-	$sql = 'select * from user where authority = 1';
+	$sql = 'select * from user where user_id != "admin"';
 	
 	$result = $db->query($sql);
 
@@ -33,8 +36,11 @@
 	<link rel="stylesheet" href="./css/normalize.css" />
 
 	<link rel="stylesheet" href="./css/board.css" />
-
+	
+	
 </head>
+	
+
 
 <body>
 
@@ -62,31 +68,8 @@
 				</tr>
 
 			</thead>
-			<script>
-				function admin(user_id){
-					<?php
-						$userid = "<script>document.write(user_id);</script>";
-						echo "$userid";
-						$sql1 = 'update user set autority = 77 where user_id = '.$userid;
-						$result1 = $db -> query($sql1);
-					?>
-					alert("권한이 변경이 되었습니다.");
-					location.reload();
-				}
-				
-				function user(user_id){
-					<?php
-						$userid = "<script>document.write(user_id);</script>";
-						echo "$userid";
-						$sql1 = 'update user set autority = 1 where user_id = '.$userid;
-						$result1 = $db -> query($sql1);
-					?>
-					alert("권한이 변경이 되었습니다.");
-					location.reload();
-				}
-				
 			
-			</script>
+			
 			
 			
 			<tbody>
@@ -95,32 +78,48 @@
 						
 						
 								while($row = $result->fetch_assoc()){
-<<<<<<< HEAD
+
 									?>
 									<html>
-=======
+
 									
-									echo "<html>
->>>>>>> origin/master
+									<html>
+
 											<body> 
 												<tr>
-													<td class = 'userid'>$row['user_id']</td>
-													<td class = 'name'> $row['Name']</td>
-													<td class = 'gender'>$row['Gender'] </td>
-													<td class = 'autho'>$row['authority'] </td>
-													<td class = 'autho_updown'> 
-													<INPUT type = 'BUTTON' value = '관리자 권한' onclick = 'admin($row['user_id'])'>
-													<INPUT type = 'BUTTON' value = '사용자 권한' onclick = 'user($row['user_id'])'>
+													<td class = 'userid'><?php echo $row['user_id']; ?></td>
+													<td class = 'name'> <?php echo $row['Name']; ?></td>
+													<td class = 'gender'> <?php echo $row['Gender']; ?> </td>
+													<td class = 'autho'> <?php 
+																				if($row['authority']== 77)
+																				{
+																					echo "관리자 권한";
+																				}
+																				else
+																				{
+																					echo "사용자 권한";
+																				}
+																					
+																					?> </td>
+													<td class = 'autho_updown'>
+													<form name = "auto_update1" method ="post" action = "autho_up.php?user_id=<?php echo $row['user_id'];?>">
+														<button type="submit" id="btn1" >관리자 권한</button>
+													</form>
+													<form name = "auto_update2" method ="post" action = "autho_down.php?user_id=<?php echo $row['user_id'];?>">
+														<button type="submit" id="btn2" >사용자 권한</button>
+													</form>
+												
+													
 													</td>
 												</tr>
 											</body>
-<<<<<<< HEAD
+
 										</html>
 						<?php
-=======
-										</html>";
+
+										
 						
->>>>>>> origin/master
+
 								};
 							
 			?>

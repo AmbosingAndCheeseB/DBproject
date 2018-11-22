@@ -2,6 +2,8 @@
 	
 	session_start();
 
+	header("Pragma: no-cache");
+
 	require_once("./dbconfig.php");
 	
 	/* 페이징 시작 */
@@ -91,7 +93,7 @@
 
 			alert("존재하지 않는 페이지입니다.");
 
-			history.back();
+			location.replace("./board.php");
 
 		</script>
 
