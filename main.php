@@ -17,7 +17,7 @@ session_start();
 				<table align="right" border="0" cellspacing="0" width="300">
         			<tr>
             			<td width="130" colspan="1"> 
-                		<input type="text" name="userid" class="inph">
+                		<input type="text" name="userid" class="inph" required>
             		</td>
             		<td rowspan="2" align="center" width="100" > 
                 		<button type="submit" id="btn" >로그인</button>
@@ -25,7 +25,7 @@ session_start();
         		</tr>
         		<tr>
             		<td width="130" colspan="1"> 
-               		<input type="password" name="userpw" class="inph">
+               		<input type="password" name="userpw" class="inph" required>
             	</td>
         	</tr>
         	<tr>
@@ -38,7 +38,7 @@ session_start();
 	
 	else if($_SESSION['is_login']){
 		
-		if($_SESSION['authority']==77){
+		if($_SESSION['userid']=='admin' && $_SESSION['authority']==77){
 			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
 			echo $_SESSION['nickname'];
 			echo '님 환영합니다!<br/>
@@ -69,7 +69,7 @@ session_start();
 							<option value="h_name" selected="selected">병원이름/진료과목</option>
 							<option value="h_symptom">증상/내용</option>
 						</select>
-                		<input type="text" name="search" class="inph">
+                		<input type="search" name="search" class="inph">
             		</td>
             		<td rowspan="2" align="center" width="100" >
                 		<button type="submit" id="btn" >검색</button>
