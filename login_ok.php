@@ -1,11 +1,7 @@
 <?php	
 	include "dbconfig.php";
 	session_start();
-	//POST로 받아온 아이다와 비밀번호가 비었다면 알림창을 띄우고 전 페이지로 돌아갑니다.
-	if($_POST["userid"] == "" || $_POST["userpw"] == ""){
-		echo '<script> alert("아이디와 패스워드를 입력하세요"); history.back(); </script>';
-	}else{
-
+	
 	//password변수에 POST로 받아온 값을 저장하고 sql문으로 POST로 받아온 아이디값을 찾습니다.
 	$password = $_POST['userpw'];
 	$sql = 'select * from user where user_id = "'.$_POST['userid'].'" ';
@@ -24,5 +20,4 @@
 	}else{ // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
 		echo "<script>alert('아이디 혹은 비밀번호가 일치하지 않습니다.'); history.back();</script>";
 	}
-}
 ?>

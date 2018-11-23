@@ -14,15 +14,15 @@
 					<table>
 						<tr>
 							<td>아이디</td>
-							<td><input type="text" size="35" name="userid"></td>
+							<td><input type="text" size="35" name="userid" required></td>
 						</tr>
 						<tr>
 							<td>비밀번호</td>
-							<td><input type="password" size="35" name="userpw"></td>
+							<td><input type="password" size="35" name="userpw" required></td>
 						</tr>
 						<tr>
 							<td>이름</td>
-							<td><input type="text" size="35" name="name"></td>
+							<td><input type="text" size="35" name="name" required></td>
 						</tr>
 						<tr>
 							<td>성별</td>
