@@ -12,5 +12,8 @@
 <file name="detail.php" server="210.117.181.21:2018" local="131873718031140738" remote="131873717400000000" Dst="0" />
 <file name="hospital_delete.php" server="210.117.181.21:2018" local="131873720606009854" remote="131873720400000000" Dst="0" />
 <file name="hospital_modify.php" server="210.117.181.21:2018" local="131873713493495092" remote="131873713200000000" Dst="0" />
-<file name="hos_modi_update.php" server="210.117.181.21:2018" local="131873714749506086" remote="131873715600000000" Dst="0" />
+<file name="hos_modi_update.php" server="210.117.181.21:2018" local="131874604187129327" remote="131874604200000000" Dst="0" />
+<file name="hospital_info.php" server="210.117.181.21:2018" local="131874600532067213" remote="131874600000000000" Dst="0" />
+<file name="hos_add_update.php" server="210.117.181.21:2018" local="131874603178600722" remote="131874603000000000" Dst="0" />
+<file name="hospital_add.php" server="210.117.181.21:2018" local="131874587095861589" remote="131874600600000000" Dst="0" />
 </dwsync>

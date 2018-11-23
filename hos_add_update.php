@@ -32,9 +32,11 @@
 
 
 
-	$sql = 'update hospital set hospital_name="' . $hospital_name . '", call_number = "' . $hospital_call . '", address = "'. $Address . '" where hospital_id = ' . $hospital_id;
-		
-	$sql2 = 'update time set monday = "'. $monday .'" , tuesday = "'. $tuesday .'", wednesday = "'. $wednesday .'", thursday = "'. $thursday .'", friday = "'. $friday .'", saturday = "'. $saturday .'", sunday = "'. $sunday .'", public_holiday = "'. $public_day .'" where hospital_id = '.$hospital_id;
+	$sql = 'insert into hospital(Hospital_ID, Hospital_Name, Call_Number, Address)
+			values(null, "'. $hospital_name .'", "'. $hospital_call. '", "'. $Address .'")';
+
+	$sql2 = 'insert into time(Hospital_ID, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Public_Holiday, sunday) 
+			 values(null, "'. $monday .'", "'. $tuesday .'", "'. $wednesday .'", "'. $thursday .'", "'. $wednesday .'", "'. $thursday .'", "'. $friday .'", "'. $saturday  .'", "'. $sunday .'", "'. $public_day .'")';
 		
 
 		
@@ -43,12 +45,12 @@
 	$result2 = $db -> query($sql2);
 
 
-	if($result&& $result2)
+	if($result)
 	{
 		?>
 		<script>
 
-			alert("병원정보가 수정되었습니다.");
+			alert("병원정보를 추가하였습니다.");
 
 			location.replace("./hospital_info.php");
 
@@ -60,7 +62,7 @@
 		?>
 		<script>
 
-			alert("병원정보를 수정하지 못했습니다.");
+			alert("병원정보를 추가하지 못했습니다.");
 
 			history.back();
 
