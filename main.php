@@ -38,25 +38,22 @@ session_start();
 	
 	else if($_SESSION['is_login']){
 		
-		if($_SESSION['userid']=='admin' && $_SESSION['authority']==77){
 			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
 			echo $_SESSION['nickname'];
-			echo '님 환영합니다!<br/>
-				<a href="./user_manage.php">관리자 페이지</a>
-				<br>
-				<a href="./logout.php">로그아웃</a>
-			</table> </body></html>';
+			echo '님 환영합니다!<br/>';
+			
+		if($_SESSION['authority']==77){
+			echo '<a href="./hospital_info.php">병원정보 수정</a>';
+			if($_SESSION['userid']=='admin'){
+				echo '<a href="./user_manage.php"><br>관리자 페이지</a>';
+			}
 		}
-		else{
-			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
-			echo $_SESSION['nickname'];
-			echo '님 환영합니다!<br/>
-				<a href="./logout.php">로그아웃</a>
-			</table> </body></html>';}
-		
+		echo '<br>
+		<a href="./logout.php">로그아웃</a>
+		</table> </body></html>';
 	}
 	
-  ?>
+ ?>
   
 </div>
 
