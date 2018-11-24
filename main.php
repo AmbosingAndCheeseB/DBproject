@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <head>
 	<title>메인페이지</title>
-	<link rel= "stylesheet" href="./css/searchbox.css">
+	<link rel= "stylesheet" href="searchbox.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
