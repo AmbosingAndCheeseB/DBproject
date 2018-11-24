@@ -46,8 +46,12 @@
 		<br>
 		<hr>
 
+
 		<h3>병원 이름</h3>
 		<p>
+
+		<p> 
+
 			<br><br>
 			<?php echo $info1[1];?></p>
 		
@@ -55,6 +59,7 @@
 		<br>
 		<br>
 		<hr>
+
 		
 		<h3>전화번호</h3>
 		<p>
@@ -64,13 +69,22 @@
 			<br>
 			<hr>
 			
+		
+		<h3>전화번호</h3>
+
+		<p>
+			<br><br><?php echo $info1[2];?></p>
+			<br>
+		
+			<hr>
 		<h3>주소</h3>
-			<p>
+
 			<br><br><?php echo $info1[3];?> </p>
 		
 
 		<br>
 		<hr>
+
 		<h3>병원 진료시간</h3>
 		<table style = "width=100%">
 			<tr>
@@ -114,12 +128,18 @@
 			</tr>
 			</table>
 
+
 		
 		<br>
 		<br>
 		<br>
 		<hr>
+
 		<h3>병원 위치 정보</h3>
+
+		<p> <?php while($info3 = $result4->fetch_array()){
+					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
+				}?></p>
 
 		
 		
@@ -141,6 +161,7 @@
 
 				var map = new daum.maps.Map(container, options);
 	</script>
+
 		
 		<br>
 		<br>
@@ -149,6 +170,7 @@
 				<p><?php while($info3 = $result4->fetch_array()){
 					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
 				}?></p>
+
 		
 		
 		
