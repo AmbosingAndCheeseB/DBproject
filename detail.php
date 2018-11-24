@@ -46,7 +46,12 @@
 		<br>
 		<hr>
 
-		<p> 병원 이름 
+
+		<h3>병원 이름</h3>
+		<p>
+
+		<p> 
+
 			<br><br>
 			<?php echo $info1[1];?></p>
 		
@@ -54,25 +59,88 @@
 		<br>
 		<br>
 		<hr>
-		<p> 전화번호
+
+		
+		<h3>전화번호</h3>
+		<p>
 			<br><br><?php echo $info1[2];?>
 			<br>
 			<br>
-			주소
+			<br>
+			<hr>
+			
+		
+		<h3>전화번호</h3>
+
+		<p>
+			<br><br><?php echo $info1[2];?></p>
+			<br>
+		
+			<hr>
+		<h3>주소</h3>
+
 			<br><br><?php echo $info1[3];?> </p>
 		
 
 		<br>
 		<hr>
-		<p> <?php echo $info2[1], " ", $info2[2], " ", $info2[3], " ", $info2[4], " ", $info2[5], " ", $info2[6], " ", $info2[8], " ", $info2[7], "<br />\n";?></p>
+
+		<h3>병원 진료시간</h3>
+		<table style = "width=100%">
+			<tr>
+
+					<th scope="col" class="hos_mon">월요일</th>
+
+					<th scope="col" class="hos_tue">화요일</th>
+
+					<th scope="col" class="hos_wed">수요일</th>
+				
+					<th scope="col" class="hos_thr">목요일</th>
+				
+					<th scope="col" class="hos_fri">금요일</th>
+				
+					<th scope="col" class="hos_sat">토요일</th>
+				
+					<th scope="col" class="hos_sun">일요일</th>
+				
+					<th scope="col" class="hos_holi">공휴일</th>
+																	  
+				</tr>
+			
+			<tr>
+				
+				<td class = "hos_mon"><?php echo " ".$info2[1]." ";?></td>
+				
+				<td class = "hos_tue"><?php echo " ".$info2[2]." ";?></td>
+				
+				<td class = "hos_wed"><?php echo " ".$info2[3]." ";?></td>
+				
+				<td class = "hos_thr"><?php echo " ".$info2[4]." ";?></td>
+				
+				<td class = "hos_fri"><?php echo " ".$info2[5]." ";?></td>
+				
+				<td class = "hos_sat"><?php echo " ".$info2[6]." ";?></td>
+				
+				<td class = "hos_sun"><?php echo " ".$info2[7]." ";?></td>
+				
+				<td class = "hos_holi"><?php echo " ".$info2[8]." ";?></td>
+		
+			</tr>
+			</table>
+
+
 		
 		<br>
 		<br>
 		<br>
 		<hr>
+
+		<h3>병원 위치 정보</h3>
+
 		<p> <?php while($info3 = $result4->fetch_array()){
 					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
 				}?></p>
+
 		
 		
 		<script>
@@ -93,6 +161,16 @@
 
 				var map = new daum.maps.Map(container, options);
 	</script>
+
+		
+		<br>
+		<br>
+		<hr>
+		
+				<p><?php while($info3 = $result4->fetch_array()){
+					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
+				}?></p>
+
 		
 		
 		
