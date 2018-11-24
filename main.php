@@ -7,6 +7,7 @@ session_start();
 <head>
 	<title>메인페이지</title>
 	<link rel= "stylesheet" href="searchbox.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div id="login_box">	
@@ -59,23 +60,14 @@ session_start();
 </div>
 
 	<div id="searchbox" class="container">						
-			<form method="get" action="search_result.php" class = "Search">
-				<table align="center" border="0" cellspacing="0" width="300">
-        			<tr>
-            			<td width="130" colspan="1">
-						<select name="searchColumn">
-							<option value="h_name" selected="selected">병원이름/진료과목</option>
-							<option value="h_symptom">증상/내용</option>
-						</select>
-                		<input type="search" name="search" class="Search-box">
-							<label class="Search-label" for="Search-box"><i class="fa fa-search"></i></label>
-            		</td>
-            		<td rowspan="2" align="center" width="100" >
-                		<button type="submit" id="btn" >검색</button>
-            		</td>
-        		</tr>
-    </table>
-  </form>
+		<form method="get" action="search_result.php" class = "Search">
+		  <select name="searchColumn">
+		    <option value="h_name" selected="selected">병원이름/진료과목</option>
+		    <option value="h_symptom">증상/내용</option>
+	      </select>
+		  <input type="search" name="search" class="Search-box" autocomplete="off">
+<label class="Search-label" for="Search-box"><i class="fa fa-search"></i></label>
+	  </form>
 </div>
 
 <div id="gotoboard">						

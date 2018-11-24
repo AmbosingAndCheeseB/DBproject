@@ -3,12 +3,12 @@
 <file name="view.php" server="210.117.181.21:2018" local="131873631934444749" remote="131873631600000000" Dst="0" />
 <file name="insert_comment.php" server="210.117.181.21:2018" local="131872743883089917" remote="131873631000000000" Dst="0" />
 <file name="delete_comment.php" server="210.117.181.21:2018" local="131873634627558059" remote="131873634000000000" Dst="0" />
-<file name="search_result.php" server="210.117.181.21:2018" local="131871997708017685" remote="131871997200000000" Dst="0" />
+<file name="search_result.php" server="210.117.181.21:2018" local="131872766173091470" remote="131875320600000000" Dst="0" />
 <file name="user_manage.php" server="210.117.181.21:2018" local="131872861256494621" remote="131872861200000000" Dst="0" />
 <file name="autho_down.php" server="210.117.181.21:2018" local="131872860340962485" remote="131872860000000000" Dst="0" />
 <file name="autho_up.php" server="210.117.181.21:2018" local="131872855734933227" remote="131872855200000000" Dst="0" />
-<file name="board.php" server="210.117.181.21:2018" local="131873609828483819" remote="131873609400000000" Dst="0" />
-<file name="dbconfig.php" server="210.117.181.21:2018" local="131873613704417057" remote="131873613600000000" Dst="0" />
+<file name="board.php" server="210.117.181.21:2018" local="131874134555667134" remote="131875320600000000" Dst="0" />
+<file name="dbconfig.php" server="210.117.181.21:2018" local="131874134555756986" remote="131875320600000000" Dst="0" />
 <file name="detail.php" server="210.117.181.21:2018" local="131873718031140738" remote="131873717400000000" Dst="0" />
 <file name="hospital_delete.php" server="210.117.181.21:2018" local="131873720606009854" remote="131873720400000000" Dst="0" />
 <file name="hospital_modify.php" server="210.117.181.21:2018" local="131873713493495092" remote="131873713200000000" Dst="0" />
@@ -16,4 +16,6 @@
 <file name="hospital_info.php" server="210.117.181.21:2018" local="131874600532067213" remote="131874600000000000" Dst="0" />
 <file name="hos_add_update.php" server="210.117.181.21:2018" local="131874603178600722" remote="131874603000000000" Dst="0" />
 <file name="hospital_add.php" server="210.117.181.21:2018" local="131874587095861589" remote="131874600600000000" Dst="0" />
+<file name="main.php" server="210.117.181.21:2018" local="131875368844175547" remote="131875368600000000" Dst="0" />
+<file name="searchbox.css" server="210.117.181.21:2018" local="131875371073712083" remote="131875371000000000" Dst="0" />
 </dwsync>

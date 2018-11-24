@@ -10,13 +10,9 @@ input[type="search"] {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #EE6E73;
-}
-
 .container {
   width: 500px;
-  margin: 50px auto;
+  margin: 100px auto auto;
 }
 
 .Search {
@@ -37,8 +33,6 @@ body {
   transition: all .15s ease-in-out;
 }
 .Search-box:focus {
-  flex: 1 0 90%;
-  margin: 0;
   outline: 0;
 }
 
@@ -48,8 +42,4 @@ body {
   right: 30px;
   font-size: 40px;
   transition: all .15s ease-in-out;
-}
-
-.Search-box:focus + .Search-label {
-  transform: translateX(12px);
 }
