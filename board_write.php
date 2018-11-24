@@ -72,7 +72,7 @@
 
 							<th scope="row"><label for="Title">제목</label></th>
 
-							<td class="title"><input type="text" name="Title" id="Title" value = "<?php echo isset($row['title'])?$row['title']:null?>" required></td>
+							<td class="title"><input type="text" name="Title" id="Title" value = "<?php echo isset($row['title'])?$row['title']:null?>"></td>
 
 						</tr>
 
@@ -80,7 +80,7 @@
 
 							<th scope="row"><label for="bContent">내용</label></th>
 
-							<td class="content"><textarea name="bContent" id="bContent"> <?php echo isset($row['b_content'])?$row['b_content']:null? required></textarea></td>
+							<td class="content"><textarea name="bContent" id="bContent"> <?php echo isset($row['b_content'])?$row['b_content']:null?></textarea></td>
 
 						</tr>
 
