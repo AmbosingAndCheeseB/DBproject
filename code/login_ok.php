@@ -16,7 +16,7 @@
 		$_SESSION['authority'] = $member["authority"];
 		$_SESSION['is_login'] = true;
 		
-		echo "<script>alert('로그인되었습니다.'); location.href='../main.php';</script>";
+		echo "<script>alert('로그인되었습니다.'); location.href='../index.php';</script>";
 	}else{ // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
 		echo "<script>alert('아이디 혹은 비밀번호가 일치하지 않습니다.'); history.back();</script>";
 	}
