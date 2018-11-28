@@ -60,16 +60,7 @@
 		<br>
 		<hr>
 
-		
-		<h3>전화번호</h3>
-		<p>
-			<br><br><?php echo $info1[2];?>
-			<br>
-			<br>
-			<br>
-			<hr>
-			
-		
+	
 		<h3>전화번호</h3>
 
 		<p>
@@ -137,41 +128,97 @@
 
 		<h3>병원 위치 정보</h3>
 
-		<p> <?php while($info3 = $result4->fetch_array()){
-					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
-				}?></p>
+	
 
 		
-		
-		<script>
-			function back()
-			{
-				history.go(-1);
-			}
-		
-		</script>
-		<div id="map" style="width:500px;height:400px;"></div>
-			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7"></script>
-			<script>
-				var container = document.getElementById('map');
-				var options = {
-					center: new daum.maps.LatLng(33.450701, 126.570667),
-					level: 3
-				};
+	<div id="map" style="width:100%;height:350px;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
 
-				var map = new daum.maps.Map(container, options);
-	</script>
+// 지도를 생성합니다    
+var map = new daum.maps.Map(mapContainer, mapOption); 
 
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('<?php echo $info1[3];?>', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === daum.maps.services.Status.OK) {
+
+        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new daum.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new daum.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;"><?php echo $info1[1]."<br>".$info1[2];?></div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+	
+    }
+	
+});    
+</script>
 		
 		<br>
 		<br>
 		<hr>
-		
-				<p><?php while($info3 = $result4->fetch_array()){
-					echo "<html><body><a href='view.php?board_num=$info3[0]'>$info3[2]</a> | $info3[5]<br/></body></html>";
-				}?></p>
+		<h3>해당 병원 후기 게시판</h3>
+		<table style = "width=100%">
+			<tr>
 
+					<th scope="col" class="num">번호</th>
+
+					<th scope="col" class="title">제목</th>
+
+					<th scope="col" class="author">작성자</th>
+				
+					<th scope="col" class="hits">조회수</th>
+				
+					<th scope="col" class="date">작성날짜</th>
+				
+																	  
+				</tr>
+			
+			<tr><?php 
+					$i = 0;
+					while($info3 = $result4->fetch_array()){
+					$i = $i + 1;
+					
+				?>
+				<td class = "num"><?php echo " ".$i." ";?></td>
+				
+				<td class = "title"><a href='view.php?board_num=<?php echo $info3[0];?>'><?php echo $info3[2]; ?></a></td>
+				
+				<td class = "author"><?php echo " ".$info3[1]." ";?></td>
+				
+				<td class = "hits"><?php echo " ".$info3[4]." ";?></td>
+				
+				<td class = "date"><?php echo " ".$info3[5]." ";?></td>
+				
 		
+			</tr>
+			</table>
+
+				
+		
+		<?php
+					}
+				?>
 		
 		
 		<div class="btnSet">
