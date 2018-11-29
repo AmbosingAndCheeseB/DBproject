@@ -7,36 +7,30 @@ session_start();
 <head>
 	<title>메인페이지</title>
 	<link rel= "stylesheet" href="css/searchbox.css">
+	<link rel= "stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div id="login_box">	
+	<div id="login_box" class="wrapper">
 	
 	<?php
 	
 	if(!$_SESSION['is_login']){
-		echo '	<html><body> <form method="post" action="code/login_ok.php">
-				<table align="right" border="0" cellspacing="0" width="300">
-        			<tr>
-            			<td width="130" colspan="1"> 
-                		<input type="text" name="userid" class="inph" required>
-            		</td>
-            		<td rowspan="2" align="center" width="100" > 
-                		<button type="submit" id="btn" >로그인</button>
-            		</td>
-        		</tr>
-        		<tr>
-            		<td width="130" colspan="1"> 
-               		<input type="password" name="userpw" class="inph" required>
-            	</td>
-        	</tr>
-        	<tr>
-           		<td colspan="3" align="center" class="mem"> 
-              	<a href="code/signup.php">회원가입 하시겠습니까?</a>
-           </td>
-        </tr>
-    </table>
-	</form> </body></html>'; }
+		echo '	<html><body>
+				<form method="post" action="code/login_ok.php" class="form-signin">
+		
+		 		<h2 class="form-signin-heading">Please login</h2>
+				
+                <input type="text" name="userid" class="form-control" placeholder="ID" required>
+				
+               	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
+				
+				<label class="checkbox">
+        		<a href="code/signup.php">회원가입 하시겠습니까?</a> </label>
+				
+				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
+				
+				</form> </body></html>'; }
 	
 	else if($_SESSION['is_login']){
 		
