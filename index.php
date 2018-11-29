@@ -18,9 +18,9 @@ session_start();
 	if(!$_SESSION['is_login']){
 		echo '	<html><body>
 				<form method="post" action="code/login_ok.php" class="form-signin">
-		
-		 		<h2 class="form-signin-heading">Please login</h2>
+		signin-heading">Please login</h2>
 				
+		 		<h2 class="form-
                 <input type="text" name="userid" class="form-control" placeholder="ID" required>
 				
                	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
@@ -50,19 +50,18 @@ session_start();
 	}
 	
  ?>
-  
+	<form method="get" action="code/search_result.php" class = "Search">
+	
+      <select name="searchColumn" class="select">
+        <option value="h_name" selected="selected">병원이름/진료과목</option>
+        <option value="h_symptom">증상/내용</option>
+      </select>
+      <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
+      <input type="text" name="search" class="Search-box" autocomplete="off">
+    </form>
 </div>
 
-	<div id="searchbox" class="container">						
-			<form method="get" action="code/search_result.php" class = "Search">
-				<select name="searchColumn" class="select">
-					<option value="h_name" selected="selected">병원이름/진료과목</option>
-					<option value="h_symptom">증상/내용</option>
-				</select>
-                <input type="text" name="search" class="Search-box" autocomplete="off">
-					<button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
-  </form>
-</div>
+	<div id="searchbox" class="container"></div>
 
 <div id="gotoboard">						
 			<form method="post" action="code/board.php">
