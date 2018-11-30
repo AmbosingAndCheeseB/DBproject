@@ -18,9 +18,8 @@ session_start();
 	if(!$_SESSION['is_login']){
 		echo '	<html><body>
 				<form method="post" action="code/login_ok.php" class="form-signin">
-		signin-heading">Please login</h2>
 				
-		 		<h2 class="form-
+		 		<h2 class="form-signin-heading">Please login</h2>
                 <input type="text" name="userid" class="form-control" placeholder="ID" required>
 				
                	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
@@ -50,6 +49,7 @@ session_start();
 	}
 	
  ?>
+<div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
 	
       <select name="searchColumn" class="select">
@@ -61,7 +61,7 @@ session_start();
     </form>
 </div>
 
-	<div id="searchbox" class="container"></div>
+	</div>
 
 <div id="gotoboard">						
 			<form method="post" action="code/board.php">
