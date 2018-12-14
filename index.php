@@ -15,8 +15,28 @@ session_start();
 <body>
 	
 <ul class="menubar">
-  <li><a href="index.php">Home</a></li>
-  <li><a href="code/board.php">Board</a></li>
+  <li><a href="index.php">홈</a></li>
+  <li><a href="code/board.php">게시판</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li><a href="code/login.php">로그인</a></li>
+				<li><a href="code/signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			echo $_SESSION["nickname"].' 님 환영합니다!';
+			
+			if($_SESSION['authority']==77){
+				echo '<li><a href="code/hospital_info.php">병원정보 수정</a></li>';
+				if($_SESSION['userid']=='admin'){
+					echo '<li><a href="code/user_manage.php">관리자 페이지</a><li>';
+				}
+			}
+			
+			echo '<li><a href="code/logout.php">로그아웃</a><li>';
+		}
+	?>
+	
 </ul>
 		
 <div id="searchbox" class="container">
@@ -35,7 +55,7 @@ session_start();
 <div id="searchbox" class="container" style="width: 820px">
 	<form method="get" action="index.php" class = "Search">
       <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
-      <input type="text" name="search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
+      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
     </form>
 </div>
 	
