@@ -8,7 +8,7 @@
 	{
 		?>
 		<script>
-			alert('이 페이지에 대한 권한이 없습니다.');
+			alert('오직 관리자만 접근 가능합니다.');
 			history.back();
 		</script>
 
@@ -64,6 +64,8 @@
 					<th scope="col" class="autho">권한</th>
 					
 					<th scope="col" class="autho_updown">권한 변경</th>
+					
+					<th scope="col" class="delete_user">회원 탈퇴</th>
 
 				</tr>
 
@@ -108,8 +110,11 @@
 													<form name = "auto_update2" method ="post" action = "autho_down.php?user_id=<?php echo $row['user_id'];?>">
 														<button type="submit" id="btn2" >사용자 권한</button>
 													</form>
-												
-													
+													</td>
+													<td class = 'delete_user'>
+													<form name = "delete_user" method="post" action = "delete_user.php?user_id=<?php echo $row['user_id'];?>">
+														<button type = "submit" id="btn3">탈퇴</button>
+													</form>
 													</td>
 												</tr>
 											</body>
