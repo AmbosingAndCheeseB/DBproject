@@ -49,6 +49,8 @@ session_start();
 	}
 	
  ?>
+</div>
+		
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
 	
@@ -61,7 +63,6 @@ session_start();
     </form>
 </div>
 
-	</div>
 
 <div id="gotoboard">						
 			<form method="post" action="code/board.php">
