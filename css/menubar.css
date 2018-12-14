@@ -9,6 +9,7 @@ body {
   background:white;
   margin: 0; padding: 0;
   list-style: none;
+	line-height: 30px;
   position: fixed;
 	top: 0;
   width: 100%;
@@ -22,6 +23,7 @@ body {
   text-decoration: none;
   padding: 10px 20px;
   color: black;
+	font-size: 1.2em;
 }
 .menubar>li>a:hover {
   background:#9BDEFF;
