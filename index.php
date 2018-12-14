@@ -6,6 +6,11 @@ session_start();
 <!DOCTYPE html>
 <head>
 	<title>메인페이지</title>
+	<style>
+		body {
+			background:#C4E7F4;
+		}
+	</style>
 	<link rel= "stylesheet" href="css/searchbox.css">
 	<link rel= "stylesheet" href="css/menubar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

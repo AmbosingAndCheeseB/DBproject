@@ -6,8 +6,7 @@ body {
 }
 
 .menubar {
-  background: white;
-	border: 1px solid black;
+  background:white;
   margin: 0; padding: 0;
   list-style: none;
   position: fixed;
@@ -25,5 +24,5 @@ body {
   color: black;
 }
 .menubar>li>a:hover {
-  background: lightgray;
+  background:#9BDEFF;
 }
