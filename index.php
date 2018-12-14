@@ -7,12 +7,17 @@ session_start();
 <head>
 	<title>메인페이지</title>
 	<link rel= "stylesheet" href="css/searchbox.css">
+	<link rel= "stylesheet" href="css/menubar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
 	
+<ul class="menubar">
+  <li><a href="index.php">Home</a></li>
+  <li><a href="code/board.php">Board</a></li>
+</ul>
 		
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
@@ -26,18 +31,6 @@ session_start();
     </form>
 </div>
 
-
-<div id="gotoboard">						
-			<form method="post" action="code/board.php">
-				<table align="left" border="0" cellspacing="0" width="300">
-        			<tr>
-            		<td rowspan="2" align="center" width="100" >
-                		<button type="submit" id="btn" >게시판</button>
-            		</td>
-        		</tr>
-    </table>
-  </form>
-</div>
 	
 <div id="searchbox" class="container" style="width: 820px">
 	<form method="get" action="index.php" class = "Search">
