@@ -7,49 +7,12 @@ session_start();
 <head>
 	<title>메인페이지</title>
 	<link rel= "stylesheet" href="css/searchbox.css">
-	<link rel= "stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
 <body>
-	<div id="login_box" class="wrapper">
 	
-	<?php
-	
-	if(!$_SESSION['is_login']){
-		echo '	<html><body>
-				<form method="post" action="code/login_ok.php" class="form-signin">
-				
-		 		<h2 class="form-signin-heading">Please login</h2>
-                <input type="text" name="userid" class="form-control" placeholder="ID" required>
-				
-               	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
-				
-				<label class="checkbox">
-        		<a href="code/signup.php">회원가입 하시겠습니까?</a> </label>
-				
-				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
-				
-				</form> </body></html>'; }
-	
-	else if($_SESSION['is_login']){
-		
-			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
-			echo $_SESSION['nickname'];
-			echo '님 환영합니다!<br/>';
-			
-		if($_SESSION['authority']==77){
-			echo '<a href="code/hospital_info.php">병원정보 수정</a>';
-			if($_SESSION['userid']=='admin'){
-				echo '<a href="code/user_manage.php"><br>관리자 페이지</a>';
-			}
-		}
-		echo '<br>
-		<a href="code/logout.php">로그아웃</a>
-		</table> </body></html>';
-	}
-	
- ?>
-</div>
 		
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
