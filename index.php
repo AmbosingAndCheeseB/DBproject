@@ -25,7 +25,7 @@ session_start();
                	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
 				
 				<label class="checkbox">
-        		<a href="code/signup.php">회원가입 하시겠습니까?</a> </label>
+        		<a href="code/signup.php">회원가입 하시겠습니까?test</a> </label>
 				
 				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
 				
