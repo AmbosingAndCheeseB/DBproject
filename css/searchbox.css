@@ -36,7 +36,6 @@ input[type="search"] {
   border: 0;
   font-size: 30px;
   box-shadow: 0 3px 12px -1px rgba(0, 0, 0, .3);
-  transition: all .15s ease-in-out;
 }
 
 #sr{
@@ -54,5 +53,4 @@ input[type="search"] {
   top: 8px;
   right: 20px;
   font-size: 30px;
-  transition: all .15s ease-in-out;
 }
