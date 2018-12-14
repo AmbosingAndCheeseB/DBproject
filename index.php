@@ -7,10 +7,12 @@ session_start();
 <head>
 	<title>메인페이지</title>
 	<link rel= "stylesheet" href="css/searchbox.css">
-	<link rel= "stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
 <body>
+<<<<<<< HEAD
 	<div id="login_box" class="wrapper">
 	
 	<?php
@@ -30,25 +32,10 @@ session_start();
 				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
 				
 				</form> </body></html>'; }
+=======
+>>>>>>> origin/master
 	
-	else if($_SESSION['is_login']){
 		
-			echo '	<html><body> <table align="right" border="0" cellspacing="0" width="300">';
-			echo $_SESSION['nickname'];
-			echo '님 환영합니다!<br/>';
-			
-		if($_SESSION['authority']==77){
-			echo '<a href="code/hospital_info.php">병원정보 수정</a>';
-			if($_SESSION['userid']=='admin'){
-				echo '<a href="code/user_manage.php"><br>관리자 페이지</a>';
-			}
-		}
-		echo '<br>
-		<a href="code/logout.php">로그아웃</a>
-		</table> </body></html>';
-	}
-	
- ?>
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
 	
@@ -61,7 +48,6 @@ session_start();
     </form>
 </div>
 
-	</div>
 
 <div id="gotoboard">						
 			<form method="post" action="code/board.php">
@@ -75,7 +61,14 @@ session_start();
   </form>
 </div>
 	
-		<div id="map" style="margin:200px auto; width:500px;height:400px;"></div>
+<div id="searchbox" class="container" style="width: 820px">
+	<form method="get" action="index.php" class = "Search">
+      <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
+      <input type="text" name="search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
+    </form>
+</div>
+	
+	<div id="map" style="margin:50px auto auto; width:800px;height:600px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7"></script>
 	<script>
 		var container = document.getElementById('map');
