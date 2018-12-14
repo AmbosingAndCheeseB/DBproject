@@ -76,7 +76,14 @@ session_start();
   </form>
 </div>
 	
-		<div id="map" style="margin:200px auto; width:500px;height:400px;"></div>
+<div id="searchbox" class="container" style="width: 820px">
+	<form method="get" action="index.php" class = "Search">
+      <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
+      <input type="text" name="search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
+    </form>
+</div>
+	
+	<div id="map" style="margin:50px auto auto; width:800px;height:600px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7"></script>
 	<script>
 		var container = document.getElementById('map');
