@@ -1,25 +1,31 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
+	<link rel= "stylesheet" href="../css/login.css">
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 </head>
 
 	
 <body>
-	
-	<form method="post" action="login_ok.php" class="form-signin">
+	<section>
+	<form method="post" action="login_ok.php">
 				
-		 		<h2 class="form-signin-heading">Please login</h2>
-                <input type="text" name="userid" class="form-control" placeholder="ID" required>
+		 		<h1>회원 로그인</h1>
+                <input type="text" name="userid" placeholder="ID" required>
 				
-               	<input type="password" name="userpw" class="form-control" placeholder="Password" required>
+               	<input type="password" name="userpw" placeholder="Password" required>
 				
-				<label class="checkbox">
-        		<a href="signup.php">회원가입 하시겠습니까?</a> </label>
+        		<a href="signup.php">계정이 없으신가요?</a> </label>
 				
 				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
 				
 				</form>
+	</section>
 	
 </body>
 </html>
