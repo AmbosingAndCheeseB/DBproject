@@ -118,11 +118,12 @@ session_start();
 
 				// 인포윈도우로 장소에 대한 설명을 표시합니다
 				var infowindow = new daum.maps.InfoWindow({
+					
 					content:'<div class="wrap">' + 
 				'    <div class="info">' + 
 				'        <div class="title">' + 
 				'            <?php echo $row['Hospital_Name']?>' + 
-				'            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+				'            <div class="close" onclick="closeOverlay(infowindow)" title="닫기"></div>' + 
 				'        </div>' + 
 				'        <div class="body">' + 
 				'            <div class="img">' +
@@ -131,7 +132,7 @@ session_start();
 				'            <div class="desc">' + 
 				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
 				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
-				'                <div><a href="detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
+				'                <div><a href="./code/detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
 				'            </div>' + 
 				'        </div>' + 
 				'    </div>' +    
@@ -141,7 +142,7 @@ session_start();
 				 
 				 daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
 				 daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-				 daum.maps.event.addListener(marker, 'click', makeClickListener());
+				 daum.maps.event.addListener(marker, 'click', makeClickListener(map));
 				
 				 function makeOverListener(map, marker, infowindow) {
 					return function() {
@@ -155,8 +156,14 @@ session_start();
 						infowindow.close();
 					};
 				}
-				 function closeOverlay() {
-						infowindow.close();    
+				  function makeClickLinstener(map) {
+					return function() {
+						infowindow.setMap(map);
+					};
+				}
+				 
+				 function closeOverlay(infowindow) {
+						infowindow.setMap(null);    
 					}
 
 				}
@@ -210,11 +217,12 @@ session_start();
 
 				// 인포윈도우로 장소에 대한 설명을 표시합니다
 				var infowindow = new daum.maps.InfoWindow({
+					position : coords,
 					content: '<div class="wrap">' + 
 				'    <div class="info">' + 
 				'        <div class="title">' + 
 				'            <?php echo $row['Hospital_Name']?>' + 
-				'            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+				'            <div class="close" onclick="closeOverlay(infowindow)" title="닫기"></div>' + 
 				'        </div>' + 
 				'        <div class="body">' + 
 				'            <div class="img">' +
@@ -223,7 +231,7 @@ session_start();
 				'            <div class="desc">' + 
 				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
 				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
-				'                <div><a href="detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
+				'                <div><a href="./code/detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
 				'            </div>' + 
 				'        </div>' + 
 				'    </div>' +    
@@ -233,7 +241,7 @@ session_start();
 				 
 				 daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
 				 daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-				 daum.maps.event.addListener(marker, 'click', makeClickListener(infowindow));
+				 daum.maps.event.addListener(marker, 'click', makeClickListener(map, infowindow));
 				
 				 function makeOverListener(map, marker, infowindow) {
 				return function() {
@@ -248,17 +256,17 @@ session_start();
 				};
 			}
 				 
-			function makeClickListener(map, marker, infowindow) {
-				return function() {
-					infowindow.open(map, marker);
-				};
-			}	 
+			 function makeClickListener(map, infowindow) {
+					return function() {
+						infowindow.setMap(map);
+					};
+				}
 				 
-			function closeOverlay() {
-				infowindow.close();    
-			}
-			
-			}
+				 function closeOverlay(infowindow) {
+						infowindow.setMap(null);    
+					}
+
+				}
 			
 
 		});
