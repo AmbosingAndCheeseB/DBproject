@@ -291,8 +291,7 @@
 			<?php echo $paging ?>
 
 		</div>
-		
-		<article class="boardArticle">
+	
 
 		<div id="searchbox" class="container">
 			<form method="get" action="search_result.php" class = "Search">
@@ -306,8 +305,6 @@
 			</form>
 		</div>
 
-
-	</article>
 
 </body>
 
