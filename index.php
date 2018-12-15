@@ -101,7 +101,23 @@ session_start();
 			{
 				
 		?>
-		var content = '<div class="wrap">' + 
+	
+		geocoder.addressSearch('<?php echo $row['Address']; ?>', function(result, status) {
+
+		// 정상적으로 검색이 완료됐으면 
+			 if (status === daum.maps.services.Status.OK) {
+
+				var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+				// 결과값으로 받은 위치를 마커로 표시합니다
+				var marker = new daum.maps.Marker({
+					map: map,
+					position: coords
+				});
+
+				// 인포윈도우로 장소에 대한 설명을 표시합니다
+				var infowindow = new daum.maps.InfoWindow({
+					content:'<div class="wrap">' + 
 				'    <div class="info">' + 
 				'        <div class="title">' + 
 				'            <?php echo $row['Hospital_Name']?>' + 
@@ -118,23 +134,7 @@ session_start();
 				'            </div>' + 
 				'        </div>' + 
 				'    </div>' +    
-				'</div>';
-		geocoder.addressSearch('<?php echo $row['Address']; ?>', function(result, status) {
-
-		// 정상적으로 검색이 완료됐으면 
-			 if (status === daum.maps.services.Status.OK) {
-
-				var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-
-				// 결과값으로 받은 위치를 마커로 표시합니다
-				var marker = new daum.maps.Marker({
-					map: map,
-					position: coords
-				});
-
-				// 인포윈도우로 장소에 대한 설명을 표시합니다
-				var infowindow = new daum.maps.InfoWindow({
-					content: content
+				'</div>'
 				});
 				
 				 
@@ -153,6 +153,11 @@ session_start();
 					return function() {
 						infowindow.close();
 					};
+				}
+				 function closeOverlay() {
+						infowindow.close();    
+					}
+
 				}
 				 
 			
@@ -188,25 +193,7 @@ session_start();
 			{
 				
 		?>
-	
-		var content = '<div class="wrap">' + 
-				'    <div class="info">' + 
-				'        <div class="title">' + 
-				'            <?php echo $row['Hospital_Name']?>' + 
-				'            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
-				'        </div>' + 
-				'        <div class="body">' + 
-				'            <div class="img">' +
-				'                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-				'           </div>' + 
-				'            <div class="desc">' + 
-				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
-				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
-				'                <div><a href="code/detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
-				'            </div>' + 
-				'        </div>' + 
-				'    </div>' +    
-				'</div>';
+
 		geocoder.addressSearch('<?php echo $row['Address']; ?>', function(result, status) {
 
 		// 정상적으로 검색이 완료됐으면 
@@ -222,7 +209,24 @@ session_start();
 
 				// 인포윈도우로 장소에 대한 설명을 표시합니다
 				var infowindow = new daum.maps.InfoWindow({
-					content: content
+					content: '<div class="wrap">' + 
+				'    <div class="info">' + 
+				'        <div class="title">' + 
+				'            <?php echo $row['Hospital_Name']?>' + 
+				'            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+				'        </div>' + 
+				'        <div class="body">' + 
+				'            <div class="img">' +
+				'                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+				'           </div>' + 
+				'            <div class="desc">' + 
+				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
+				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
+				'                <div><a href="detail.php?h_id=<?php echo $row['Hospital_ID']; ?>" target="_blank" class="link">더보기</a></div>' + 
+				'            </div>' + 
+				'        </div>' + 
+				'    </div>' +    
+				'</div>'
 				});
 				//infowindow.open(map, marker);
 				 
@@ -250,7 +254,7 @@ session_start();
 			}	 
 				 
 			function closeOverlay() {
-				overlay.setMap(null);     
+				infowindow.close();    
 			}
 			
 			}
