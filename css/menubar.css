@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Poor+Story');
 /* CSS Document */
 
 body {
@@ -23,7 +24,8 @@ body {
   text-decoration: none;
   padding: 10px 20px;
   color: black;
-	font-size: 1.2em;
+	font-size: 1.4em;
+	font-family: 'Poor Story', cursive;
 }
 .menubar>li>a:hover {
   background:#9BDEFF;

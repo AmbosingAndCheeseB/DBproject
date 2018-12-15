@@ -60,7 +60,7 @@ session_start();
 <div id="searchbox" class="container" style="margin: 250px auto auto; width: 800px">
 	<form method="get" action="index.php" class = "Search">
       <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
-      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
+      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 2.0em" autocomplete="off">
     </form>
 </div>
 	
