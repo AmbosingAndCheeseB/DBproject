@@ -15,6 +15,7 @@ session_start();
 	</style>
 	<link rel= "stylesheet" href="css/searchbox.css">
 	<link rel= "stylesheet" href="css/menubar.css">
+	<link rel= "stylesheet" href="css/map.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
