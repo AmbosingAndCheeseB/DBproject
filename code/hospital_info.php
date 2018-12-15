@@ -6,9 +6,7 @@
 
 	$result = $db -> query($sql);
 
-	$sql1 = 'select * from hospital';
 
-	$result1 = $db -> query($sql1);
 
 
 		
@@ -37,7 +35,7 @@
 
 	<article class="boardArticle">
 
-		<h3>병원정보 관리 페이지</h3>
+		<h3>병원정보 관리</h3>
 
 		<table>
 
@@ -52,14 +50,17 @@
 					<th scope="col" class="hos_addr">주소</th>
 
 					<th scope="col" class="call_num">전화번호</th>
-
-					<th scope="col" class="hos_time">진료 시간</th>
 					
-					<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
+					<th scope="col" class="hos_modi">수정</th>
+					
+					<th scope="col" class="hos_dele">삭제</th>
+					
+					
 																	  
 				</tr>
 
 			</thead>
+			<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
 
 			<tbody>
 
@@ -71,7 +72,7 @@
 
 						{
 					
-							$row1 = $result1->fetch_array();
+							
 							
 
 
@@ -85,13 +86,16 @@
 					<td class="hos_addr"><?php echo $row['Address']; ?></td>
 				
 					<td class="call_num"><?php echo $row['Call_Number']?></td>
+					
+					<td class="hos_modi"><input type="button" value = "병원정보 수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
+							echo $row['Hospital_ID'];
+						?>'"></td>
+					
+					<td class="hos_dele"><input type="button" value = "병원정보 삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
+							echo $row['Hospital_ID'];
+						?>'"></td>
 
-					<td class="hos_time"><?php 
-									for($i =4; $i < 12; $i++)
-									{
-										echo $row1[$i]." ";
-						
-									}?></td>
+				
 
 				</tr>
 

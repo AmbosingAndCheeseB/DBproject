@@ -219,6 +219,8 @@
 					<th scope="col" class="hosp_name">병원명</th>
 
 					<th scope="col" class="call_num">전화번호</th>
+					
+					<th scope="col" class="hosp_addr"> 주소 </th>
 
 				</tr>
 
@@ -239,6 +241,7 @@
 													<td class = 'hosp_id'>$s_result[0] </td>
 													<td class = 'hosp_name'> <a href='detail.php?h_id=$s_result[0]'> $s_result[1]</a></td>
 													<td class = 'call_num'>  $s_result[2] </td>
+													<td class = 'hosp_addr'> $s_result[3] </td>
 												</tr>
 											</body>
 										</html>";
