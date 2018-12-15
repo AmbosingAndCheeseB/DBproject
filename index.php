@@ -35,12 +35,11 @@ session_start();
 		else if($_SESSION['is_login']){
 			echo $_SESSION["nickname"].' 님 환영합니다!';
 			
-			if($_SESSION['authority']==77){
-				echo '<li><a href="code/hospital_info.php">병원정보 수정</a></li>';
-				if($_SESSION['userid']=='admin'){
-					echo '<li><a href="code/user_manage.php">관리자 페이지</a><li>';
-				}
+
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li><a href="code/user_manage.php">유저 관리 페이지</a><li>';
 			}
+			
 			
 			echo '<li><a href="code/logout.php">로그아웃</a><li>';
 		}
@@ -116,23 +115,29 @@ session_start();
 				var infowindow = new daum.maps.InfoWindow({
 					content: '<div style="width:180px;text-align:center;padding:6px 0;"><?php echo $row['Hospital_Name']."<br>".$row['Call_Number']?></div>'
 				});
-				//infowindow.open(map, marker);
+				
 				 
 				 daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
 				 daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+				 daum.maps.event.addListener(marker, 'click', makeClickListener());
 				
 				 function makeOverListener(map, marker, infowindow) {
-				return function() {
+					return function() {
 					infowindow.open(map, marker);
-				};
-			}
+					};
+				}
 
-			// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-			function makeOutListener(infowindow) {
-				return function() {
-					infowindow.close();
-				};
-			}
+				// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+				function makeOutListener(infowindow) {
+					return function() {
+						infowindow.close();
+					};
+				}
+				 function makeClickListener() {
+					return function() {
+						location.replace('./code/detail.php?h_id=<?php echo $row['Hospital_ID']; ?>');
+					};
+				}
 			
 			}
 			

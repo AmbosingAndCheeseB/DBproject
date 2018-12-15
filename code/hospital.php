@@ -1,6 +1,6 @@
 <?php	
 	include "dbconfig.php";
-	
+	session_start();
 	
 	
 	
@@ -187,11 +187,29 @@
 					<th scope="col" class="call_num">전화번호</th>
 					
 					<th scope="col" class="hosp_addr"> 주소 </th>
+					
+					<?php 
+					if($_SESSION['authority']==77)
+					{
+						?>
+					<th scope="col" class="hos_modi">수정</th>
+					
+					<th scope="col" class="hos_dele">삭제</th>
+					
+					<?php
+					}
+					?>
 
 				</tr>
 
 			</thead>
-
+			<?php
+			if ($_SESSION['authority']==77)
+			{?>
+				<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
+			<?
+			}
+			?>
 			<tbody>
 			
 			
@@ -201,17 +219,32 @@
 						
 								while($s_result = $result->fetch_array()){
 									
-									echo "<html>
+									?><html>
 											<body> 
 												<tr>
-													<td class = 'hosp_id'>$s_result[0] </td>
-													<td class = 'hosp_name'> <a href='detail.php?h_id=$s_result[0]'> $s_result[1]</a></td>
-													<td class = 'call_num'>  $s_result[2] </td>
-													<td class = 'hosp_addr'> $s_result[3] </td>
+													<td class = 'hosp_id'><?php echo $s_result[0]; ?></td>
+													<td class = 'hosp_name'> <a href='detail.php?h_id=<?php echo $s_result[0]; ?>'> <?php echo $s_result[1]; ?></a></td>
+													<td class = 'call_num'> <?php echo $s_result[2]; ?>] </td>
+													<td class = 'hosp_addr'><?php echo $s_result[3]; ?> </td>
+											 <?php
+													if($_SESSION['authority']==77)
+													{
+														?>
+														<td class="hos_modi"><input type="button" value = "병원정보 수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
+														echo $s_result[0];
+														?>'"></td>
+
+														<td class="hos_dele"><input type="button" value = "병원정보 삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
+															echo $s_result[0];
+														?>'"></td>
+											<?php
+													}
+										?>
+
 												</tr>
 											</body>
-										</html>";
-									
+										</html>
+								<?php	
 								};
 							
 						
