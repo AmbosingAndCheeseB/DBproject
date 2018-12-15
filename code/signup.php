@@ -22,6 +22,7 @@
 	<ul class="menubar">
   		<li><a href="../index.php">홈</a></li>
  	 	<li><a href="../code/board.php">게시판</a></li>
+		<li><a href="code/hospital.php">병원 정보</a></li>
 	</ul>
 	
 	<section>
