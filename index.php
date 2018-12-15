@@ -6,6 +6,11 @@ session_start();
 <!DOCTYPE html>
 <head>
 	<title>메인페이지</title>
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 	<link rel= "stylesheet" href="css/searchbox.css">
 	<link rel= "stylesheet" href="css/menubar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,8 +41,28 @@ session_start();
 ?>
 	
 <ul class="menubar">
-  <li><a href="index.php">Home</a></li>
-  <li><a href="code/board.php">Board</a></li>
+  <li><a href="index.php">홈</a></li>
+  <li><a href="code/board.php">게시판</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li><a href="code/login.php">로그인</a></li>
+				<li><a href="code/signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			echo $_SESSION["nickname"].' 님 환영합니다!';
+			
+			if($_SESSION['authority']==77){
+				echo '<li><a href="code/hospital_info.php">병원정보 수정</a></li>';
+				if($_SESSION['userid']=='admin'){
+					echo '<li><a href="code/user_manage.php">관리자 페이지</a><li>';
+				}
+			}
+			
+			echo '<li><a href="code/logout.php">로그아웃</a><li>';
+		}
+	?>
+	
 </ul>
 		
 <div id="searchbox" class="container">
@@ -53,14 +78,15 @@ session_start();
 </div>
 
 	
-<div id="searchbox" class="container" style="width: 820px">
+<div id="searchbox" class="container" style="margin: 250px auto auto; width: 800px">
 	<form method="get" action="index.php" class = "Search">
       <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
-      <input type="text" name="search" class="Search-box" style="height: 60px; font-size: 30px" autocomplete="off">
+      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 2.0em" autocomplete="off">
     </form>
 </div>
 	
-	<div id="map" style="margin:50px auto auto; width:800px;height:600px;"></div>
+	
+<div id="map" style="margin:40px auto 150px auto; width:1000px;height:600px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7"></script>
 	<script>
 		var container = document.getElementById('map');
@@ -71,6 +97,8 @@ session_start();
 
 		var map = new daum.maps.Map(container, options);
 	</script>
+</div>
 
+	
 </body>
 </html>

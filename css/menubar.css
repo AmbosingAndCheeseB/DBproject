@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500');
 /* CSS Document */
 
 body {
@@ -6,10 +7,10 @@ body {
 }
 
 .menubar {
-  background: white;
-	border: 1px solid black;
+  background:white;
   margin: 0; padding: 0;
   list-style: none;
+	line-height: 30px;
   position: fixed;
 	top: 0;
   width: 100%;
@@ -23,7 +24,9 @@ body {
   text-decoration: none;
   padding: 10px 20px;
   color: black;
+	font-size: 1.4em;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 .menubar>li>a:hover {
-  background: lightgray;
+  background:#9BDEFF;
 }
