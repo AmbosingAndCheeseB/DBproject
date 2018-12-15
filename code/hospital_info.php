@@ -6,9 +6,7 @@
 
 	$result = $db -> query($sql);
 
-
-
-	$sql1 = 'select * from time';
+	$sql1 = 'select * from hospital';
 
 	$result1 = $db -> query($sql1);
 
@@ -89,7 +87,7 @@
 					<td class="call_num"><?php echo $row['Call_Number']?></td>
 
 					<td class="hos_time"><?php 
-									for($i =1; $i < 9; $i++)
+									for($i =4; $i < 12; $i++)
 									{
 										echo $row1[$i]." ";
 						

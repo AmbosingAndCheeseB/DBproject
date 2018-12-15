@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="user_manage.php" server="210.117.181.21:2018" local="131892661829010299" remote="131892666600000000" Dst="0" />
-<file name="detail.php" server="210.117.181.21:2018" local="131892701869186596" remote="131892702000000000" Dst="0" />
-=======
-<file name="login.php" server="210.117.181.21:2018//s201615383/" local="131892691217644221" remote="131892691200000000" Dst="0" />
->>>>>>> origin/master
+<file name="detail.php" server="210.117.181.21:2018" local="131893373912548448" remote="131893374000000000" Dst="0" />
+<file name="hospital_info.php" server="210.117.181.21:2018" local="131893363331189653" remote="131893363200000000" Dst="0" />
+<file name="hos_modi_update.php" server="210.117.181.21:2018" local="131893370089621977" remote="131893369800000000" Dst="0" />
+<file name="hospital_modify.php" server="210.117.181.21:2018" local="131893370335926442" remote="131893370400000000" Dst="0" />
 </dwsync>

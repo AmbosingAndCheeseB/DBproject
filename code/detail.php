@@ -9,18 +9,12 @@
 	
 	
 	
-	$sql2 = 'select * from time where Hospital_ID = "'.$hospital.'" ';
-	$result2 = $db->query($sql2);
-	$info2 = $result2->fetch_array();
-	
-	
 	
 	$sql3 = 'select Hospital_Name from hospital where Hospital_ID = "'.$hospital.'" ';
 	$result3 = $db->query($sql3);
 	$temp = $result3->fetch_array();
 
-	
-	$sql4 = 'select * from board where B_content like "%'.$temp[0].'%" ';
+	$sql4 = 'select * from board where B_content like "%'.$temp[0].'%" OR title like "%'. $temp[0].'%" order by board_num desc';
 	$result4 = $db->query($sql4);
 	
 	
@@ -106,21 +100,21 @@
 			
 			<tr>
 				
-				<td class = "hos_mon"><?php echo " ".$info2[1]." ";?></td>
+				<td class = "hos_mon"><?php echo " ".$info1[4]." ";?></td>
 				
-				<td class = "hos_tue"><?php echo " ".$info2[2]." ";?></td>
+				<td class = "hos_tue"><?php echo " ".$info1[5]." ";?></td>
+			
+				<td class = "hos_wed"><?php echo " ".$info1[6]." ";?></td>
 				
-				<td class = "hos_wed"><?php echo " ".$info2[3]." ";?></td>
+				<td class = "hos_thr"><?php echo " ".$info1[7]." ";?></td>
 				
-				<td class = "hos_thr"><?php echo " ".$info2[4]." ";?></td>
+				<td class = "hos_fri"><?php echo " ".$info1[8]." ";?></td>
 				
-				<td class = "hos_fri"><?php echo " ".$info2[5]." ";?></td>
+				<td class = "hos_sat"><?php echo " ".$info1[9]." ";?></td>
 				
-				<td class = "hos_sat"><?php echo " ".$info2[6]." ";?></td>
+				<td class = "hos_sun"><?php echo " ".$info1[10]." ";?></td>
 				
-				<td class = "hos_sun"><?php echo " ".$info2[7]." ";?></td>
-				
-				<td class = "hos_holi"><?php echo " ".$info2[8]." ";?></td>
+				<td class = "hos_holi"><?php echo " ".$info1[11]." ";?></td>
 		
 			</tr>
 			</table>
@@ -139,46 +133,46 @@
 		
 	<div id="map" style="width:100%;height:350px;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
-<script>
-	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		mapOption = {
-			center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level: 3 // 지도의 확대 레벨
-		};  
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+				level: 3 // 지도의 확대 레벨
+			};  
 
-	// 지도를 생성합니다    
-	var map = new daum.maps.Map(mapContainer, mapOption); 
+		// 지도를 생성합니다    
+		var map = new daum.maps.Map(mapContainer, mapOption); 
 
-	// 주소-좌표 변환 객체를 생성합니다
-	var geocoder = new daum.maps.services.Geocoder();
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new daum.maps.services.Geocoder();
 
-	// 주소로 좌표를 검색합니다
-	geocoder.addressSearch('<?php echo $info1[3];?>', function(result, status) {
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch('<?php echo $info1[3];?>', function(result, status) {
 
-    // 정상적으로 검색이 완료됐으면 
-     if (status === daum.maps.services.Status.OK) {
+		// 정상적으로 검색이 완료됐으면 
+		 if (status === daum.maps.services.Status.OK) {
 
-        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+			var coords = new daum.maps.LatLng(result[0].y, result[0].x);
 
-        // 결과값으로 받은 위치를 마커로 표시합니다
-        var marker = new daum.maps.Marker({
-            map: map,
-            position: coords
-        });
+			// 결과값으로 받은 위치를 마커로 표시합니다
+			var marker = new daum.maps.Marker({
+				map: map,
+				position: coords
+			});
 
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new daum.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;"><?php echo $info1[1]."<br>".$info1[2];?></div>'
-        });
-        infowindow.open(map, marker);
+			// 인포윈도우로 장소에 대한 설명을 표시합니다
+			var infowindow = new daum.maps.InfoWindow({
+				content: '<div style="width:200px;text-align:center;padding:6px 0;"><?php echo $info1[1]."<br>".$info1[2];?></div>'
+			});
+			infowindow.open(map, marker);
 
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
+			// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+			map.setCenter(coords);
 	
-    }
+    	}
 	
-});    
-</script>
+		});    
+	</script>
 		
 		<br>
 		<br>
@@ -203,7 +197,21 @@
 			<tr><?php 
 					$i = 0;
 					while($info3 = $result4->fetch_array()){
-					$i = $i + 1;
+						$i = $i + 1;
+					
+						$datetime = explode(' ', $info3[5]);
+
+							$date = $datetime[0];
+
+							$time = $datetime[1];
+
+							if($date == Date('Y-m-d'))
+
+								$info3[5] = $time;
+
+							else
+
+								$info3[5] = $date;
 					
 				?>
 				<td class = "num"><?php echo " ".$i." ";?></td>
@@ -218,13 +226,14 @@
 				
 		
 			</tr>
+			<?php
+					}
+				?>
+		
 			</table>
 
 				
 		
-		<?php
-					}
-				?>
 		
 		
 		<div class="btnSet">

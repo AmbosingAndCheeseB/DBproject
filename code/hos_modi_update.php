@@ -25,25 +25,34 @@
 	$sunday = $_POST['hos_sun'];
 
 	$public_day = $_POST['hos_pub'];
-
 	
 
 	
 
+	
 
 
-	$sql = 'update hospital set hospital_name="' . $hospital_name . '", call_number = "' . $hospital_call . '", address = "'. $Address . '" where hospital_id = ' . $hospital_id;
+
+	$sql = 'update hospital set hospital_name="' . $hospital_name . '",
+	call_number = "' . $hospital_call . '",
+	address = "'. $Address . '",
+	monday = "'. $monday .'" ,
+	tuesday = "'. $tuesday .'",
+	wednesday = "'. $wednesday .'",
+	thursday = "'. $thursday .'",
+	friday = "'. $friday .'",
+	saturday = "'. $saturday .'",
+	sunday = "'. $sunday .'",
+	public_holiday = "'. $public_day .'" where hospital_id = ' . $hospital_id;
 		
-	$sql2 = 'update time set monday = "'. $monday .'" , tuesday = "'. $tuesday .'", wednesday = "'. $wednesday .'", thursday = "'. $thursday .'", friday = "'. $friday .'", saturday = "'. $saturday .'", sunday = "'. $sunday .'", public_holiday = "'. $public_day .'" where hospital_id = '.$hospital_id;
 		
 
 		
 	$result = $db -> query($sql);
 
-	$result2 = $db -> query($sql2);
 
 
-	if($result&& $result2)
+	if($result)
 	{
 		?>
 		<script>

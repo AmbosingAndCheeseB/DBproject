@@ -8,15 +8,7 @@
 
 	$result = $db -> query($sql);
 
-	$row = $result -> fetch_assoc();
-
-	$sql2 = 'select * from time where hospital_id = '. $hospital_id;
-
-	$result2 = $db -> query($sql2);
-
-	$row2 = $result2 -> fetch_assoc();
-	
-		 
+	$row = $result -> fetch_assoc();	 
 
 ?>
 
@@ -86,7 +78,7 @@
 
 							<th scope="row"><label for="hos_addr">병원 주소</label></th>
 
-							<td class="content"><textarea name="call" id="call" required> <?php echo isset($row['Address'])?$row['Address']:null?>  </textarea></td>
+							<td class="content"><textarea name="hos_addr" id="hos_addr" required> <?php echo isset($row['Address'])?$row['Address']:null?>  </textarea></td>
 
 						</tr>
 
@@ -102,7 +94,7 @@
 
 							<th scope="row"><label for="hos_mon">월요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_mon" id="hos_mon" value = "<?php echo isset($row2['Monday'])?$row2['Monday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_mon" id="hos_mon" value = "<?php echo isset($row['Monday'])?$row['Monday']:null?>"></td>
 
 						</tr>
 						
@@ -110,7 +102,7 @@
 
 							<th scope="row"><label for="hos_tue">화요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_tue" id="hos_tue" value = "<?php echo isset($row2['Tuesday'])?$row2['Tuesday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_tue" id="hos_tue" value = "<?php echo isset($row['Tuesday'])?$row['Tuesday']:null?>"></td>
 
 						</tr>
 						
@@ -118,7 +110,7 @@
 
 							<th scope="row"><label for="hos_wed">수요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_wed" id="hos_wed" value = "<?php echo isset($row2['Wednesday'])?$row2['Wednesday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_wed" id="hos_wed" value = "<?php echo isset($row['Wednesday'])?$row['Wednesday']:null?>"></td>
 
 						</tr>
 						
@@ -126,7 +118,7 @@
 
 							<th scope="row"><label for="hos_thr">목요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_thr" id="hos_thr" value = "<?php echo isset($row2['Thursday'])?$row2['Thursday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_thr" id="hos_thr" value = "<?php echo isset($row['Thursday'])?$row['Thursday']:null?>"></td>
 
 						</tr>
 						
@@ -134,7 +126,7 @@
 
 							<th scope="row"><label for="hos_fri">금요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_fri" id="hos_fri" value = "<?php echo isset($row2['Friday'])?$row2['Friday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_fri" id="hos_fri" value = "<?php echo isset($row['Friday'])?$row['Friday']:null?>"></td>
 
 						</tr>
 						
@@ -142,7 +134,7 @@
 
 							<th scope="row"><label for="hos_sat">토요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_sat" id="hos_sat" value = "<?php echo isset($row2['Saturday'])?$row2['Saturday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_sat" id="hos_sat" value = "<?php echo isset($row['Saturday'])?$row['Saturday']:null?>"></td>
 
 						</tr>
 						
@@ -150,7 +142,7 @@
 
 							<th scope="row"><label for="hos_sun">일요일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_sun" id="hos_sun" value = "<?php echo isset($row2['sunday'])?$row2['sunday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_sun" id="hos_sun" value = "<?php echo isset($row['Sunday'])?$row['Sunday']:null?>"></td>
 
 						</tr>
 						
@@ -158,7 +150,7 @@
 
 							<th scope="row"><label for="hos_pub">공휴일 진료시간</label></th>
 
-							<td class="title"><input type="text" name="hos_pub" id="hos_pub" value = "<?php echo isset($row2['Public_Holiday'])?$row2['Public_Holiday']:null?>"></td>
+							<td class="title"><input type="text" name="hos_pub" id="hos_pub" value = "<?php echo isset($row['Public_Holiday'])?$row['Public_Holiday']:null?>"></td>
 
 						</tr>
 
