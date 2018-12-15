@@ -76,7 +76,7 @@
 
 	
 
-	$paging = '<ul>'; // 페이징을 저장할 변수
+	$paging = '<ul id="pagination">'; // 페이징을 저장할 변수
 
 	
 
@@ -84,7 +84,7 @@
 
 	if($page != 1) { 
 
-		$paging .= '<li class="page page_start"><a href="./hospital.php?page=1">처음</a></li>';
+		$paging .= '<li class="blocks"><a href="./hospital.php?page=1">처음</a></li>';
 
 	}
 
@@ -92,7 +92,7 @@
 
 	if($currentSection != 1) { 
 
-		$paging .= '<li class="page page_prev"><a href="./hospital.php?page=' . $prevPage .'">이전</a></li>';
+		$paging .= '<li class="blocks"><a href="./hospital.php?page=' . $prevPage .'">이전</a></li>';
 
 	}
 
@@ -102,11 +102,11 @@
 
 		if($i == $page) {
 
-			$paging .= '<li class="page current">' . $i . '</li>';
+			$paging .= '<li class="blocks active">' . $i . '</li>';
 
 		} else {
 
-			$paging .= '<li class="page"><a href="./hospital.php?page='. $i .'">' . $i . '</a></li>';
+			$paging .= '<li class="blocks"><a href="./hospital.php?page='. $i .'">' . $i . '</a></li>';
 
 		}
 
@@ -118,7 +118,7 @@
 
 	if($currentSection != $allSection) { 
 
-		$paging .= '<li class="page page_next"><a href="./hospital.php?page=' . $nextPage .'">다음</a></li>';
+		$paging .= '<li class="blocks"><a href="./hospital.php?page=' . $nextPage .'">다음</a></li>';
 
 	}
 
@@ -128,7 +128,7 @@
 
 	if($page != $allPage) { 
 
-		$paging .= '<li class="page page_end"><a href="./hospital.php?page=' . $allPage . '">끝</a></li>';
+		$paging .= '<li class="blocks"><a href="./hospital.php?page=' . $allPage . '">끝</a></li>';
 
 	}
 
@@ -194,23 +194,17 @@
 	
 </ul>
 	
-	
-	<article class="boardArticle">
 
-		<table>
-
-			<caption class="readHide">검색 결과</caption>
-
-			<thead>
+		<table class="jbtable" cellspacing="0" cellpadding="0" >
 
 				<tr>
-					<th scope="col" class="hosp_id">번호</th>
+					<th scope="col">번호</th>
 
-					<th scope="col" class="hosp_name">병원명</th>
+					<th scope="col">병원명</th>
 
-					<th scope="col" class="call_num">전화번호</th>
+					<th scope="col">전화번호</th>
 					
-					<th scope="col" class="hosp_addr"> 주소 </th>
+					<th scope="col"> 주소 </th>
 					
 					<?php 
 					if($_SESSION['authority']==77)
@@ -226,7 +220,6 @@
 
 				</tr>
 
-			</thead>
 			<?php
 			if ($_SESSION['authority']==77)
 			{?>
@@ -234,7 +227,6 @@
 			<?
 			}
 			?>
-			<tbody>
 			
 			
 			<?php
@@ -280,13 +272,10 @@
 
 		
 
-			</tbody>
-
 		</table>
 
 		
-		</div>
-		<div class="paging">
+		<div id="wrap">
 
 			<?php echo $paging ?>
 
