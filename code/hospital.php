@@ -159,19 +159,43 @@
 
 	<meta charset="utf-8" />
 
-	<title>후기 게시판</title>
-
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel="stylesheet" href="../css/board.css" />
+	<link rel= "stylesheet" href="../css/board_search.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 
 </head>
 
 <body>
 
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="board.php">게시판</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li><a href="login.php">로그인</a></li>
+				<li><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			echo '<li><a href="logout.php">로그아웃</a><li>';
+		}
+	?>
+	
+</ul>
+	
+	
 	<article class="boardArticle">
-
-		<h3>아프니까 병원이다</h3>
 
 		<table>
 
