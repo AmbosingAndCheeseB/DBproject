@@ -23,10 +23,10 @@ body {
   display: block;
   text-decoration: none;
   padding: 10px 20px;
-  color: black;
+  color:#150F9F;
 	font-size: 1.4em;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 .menubar>li>a:hover {
-  background:#9BDEFF;
+  background:#AEE4FF;
 }
