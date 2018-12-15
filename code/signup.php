@@ -5,35 +5,38 @@
 <html>
 <head>
 	<title>회원가입 폼</title>
+	<link rel= "stylesheet" href="../css/signup.css">
+	<link rel= "stylesheet" href="../css/menubar.css">
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	
 </head>
-<body>
-	<form method="post" action="signup_ok.php">
-		<h1>회원가입 폼</h1>
-			<fieldset>
-				<legend>입력사항</legend>
-					<table>
-						<tr>
-							<td>아이디</td>
-							<td><input type="text" size="35" name="userid" required></td>
-						</tr>
-						<tr>
-							<td>비밀번호</td>
-							<td><input type="password" size="35" name="userpw" required></td>
-						</tr>
-						<tr>
-							<td>이름</td>
-							<td><input type="text" size="35" name="name" required></td>
-						</tr>
-						<tr>
-							<td>성별</td>
-							<td>남<input type="radio" name="sex" value="남"> 여<input type="radio" name="sex" value="여"></td>
-						</tr>
-						
-					</table>
 
-				<input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" />
-			
-		</fieldset>
+	
+<body>
+	
+	<ul class="menubar">
+  		<li><a href="../index.php">홈</a></li>
+ 	 	<li><a href="../code/board.php">게시판</a></li>
+	</ul>
+	
+	<section>
+	<form method="post" action="signup_ok.php">
+		<h1>회원 가입</h1>
+			<input type="text" size="35" name="userid" placeholder="ID" required>
+			<input type="password" size="35" name="userpw" placeholder="Password" required>
+			<input type="text" size="35" name="name" placeholder="Name" required>
+		<div style="text-align: left">
+			<label>남<input type="radio" name="sex" value="남">
+			<label>여<input type="radio" name="sex" value="여">
+		</div>
+	 	<button type="submit">가입하기</button>
+		<button type="reset">다시쓰기</button>
 	</form>
+	</section>
 </body>
 </html>
