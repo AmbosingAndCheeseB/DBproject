@@ -15,7 +15,9 @@
 		$_SESSION['nickname'] = $member["Name"];
 		$_SESSION['authority'] = $member["authority"];
 		$_SESSION['is_login'] = true;
-		
+		if($_SESSION['authority']==77){
+				echo "<script>alert('관리자 권한이므로 병원정보 페이지에서 병원정보를 수정하거나 삭제할 수 있습니다.')</script>";
+		}
 		echo "<script>location.href='../index.php';</script>";
 	}else{ // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
 		echo "<script>alert('아이디 혹은 비밀번호가 일치하지 않습니다.'); history.back();</script>";
