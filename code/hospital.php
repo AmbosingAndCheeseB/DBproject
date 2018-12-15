@@ -1,10 +1,15 @@
 <?php
 	
-	session_start();
-	unset($REQUEST_METHOD);
-
-
 	require_once("./dbconfig.php");
+
+	$sql = 'select * from hospital';
+
+	$result = $db -> query($sql);
+
+	$sql1 = 'select * from hospital';
+
+	$result1 = $db -> query($sql1);
+
 	
 	/* 페이징 시작 */
 
@@ -208,6 +213,11 @@
 	$result = $db->query($sql);
 	}
 ?>
+		
+?>
+
+
+
 
 <!DOCTYPE html>
 
@@ -217,7 +227,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>후기 게시판</title>
+	<title>병원정보 페이지</title>
 
 	<link rel="stylesheet" href="./css/normalize.css" />
 
@@ -226,29 +236,36 @@
 </head>
 
 <body>
+	<h3>병원 정보</h3>
 
 	<article class="boardArticle">
 
-		<h3>후기 자유게시판</h3>
+		<div id="searchbox" class="container">
+	<form method="get" action="search_result.php" class = "Search">
+	
+      <select name="searchColumn" class="select">
+        <option value="h_name" selected="selected">병원이름/진료과목</option>
+        <option value="h_symptom">증상/내용</option>
+      </select>
+      <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
+      <input type="text" name="search" class="Search-box" autocomplete="off">
+    </form>
+</div>
 
 		<table>
 
-			<caption class="readHide">후기 자유게시판</caption>
+			
 
 			<thead>
 
 				<tr>
 
-					<th scope="col" class="no">번호</th>
+					<th scope="col" class="hos_name">병원이름</th>
 
-					<th scope="col" class="title">제목</th>
+					<th scope="col" class="hos_addr">주소</th>
 
-					<th scope="col" class="author">작성자</th>
-
-					<th scope="col" class="date">작성일</th>
-
-					<th scope="col" class="hit">조회</th>
-
+					<th scope="col" class="call_num">전화번호</th>
+																	  
 				</tr>
 
 			</thead>
@@ -256,108 +273,43 @@
 			<tbody>
 
 					<?php
-					if(isset($emptyData)) {
-
-							echo $emptyData;
-
-						} else {
 
 						
 
 						while($row = $result->fetch_assoc())
 
 						{
-							$sql2 = "select count(*) as cnt from comment where board_num =".$row['board_num'];
-							$result2 = $db ->query($sql2);
-							$row2 = $result2->fetch_assoc();
+					
+							$row1 = $result1->fetch_array();
 							
 
-							$datetime = explode(' ', $row['b_date']);
-
-							$date = $datetime[0];
-
-							$time = $datetime[1];
-
-							if($date == Date('Y-m-d'))
-
-								$row['b_date'] = $time;
-
-							else
-
-								$row['b_date'] = $date;
 
 					?>
 
 				<tr>
 
-					<td class="no"><?php echo $row['board_num']; ?></td>
+					<td class="hos_name">
+					 <a href="detail.php?h_id=<?php echo $row['Hospital_ID'];?>"> <?php echo $row['Hospital_Name']; ?></a></td>
 
-					<td class="title">
-					<a href="./view.php?board_num=<?php echo $row['board_num']?>">
-					<?php echo $row['title']." ";
-					 if($num_comment)
-									{
-										print "[<font color=red><b>$num_comment</b></font>]";
-									}?></td> </a>
+					<td class="hos_addr"><?php echo $row['Address']; ?></td>
+				
+					<td class="call_num"><?php echo $row['Call_Number']?></td>
 
-					<td class="author"><?php echo $row['user_id']?></td>
-
-					<td class="date"><?php echo $row['b_date']?></td>
-
-					<td class="hit"><?php echo $row['visit']?></td>
-
+					
 				</tr>
 
 					<?php
 
 						}
-					}
+					
 
 					?>
 
 			</tbody>
 
 		</table>
-		<div class="btnSet">
-		<?php
-		if(isset($_SESSION["userid"]))
-		{
-			?>
-
-			<a href="./board_write.php" class="btnWrite btn">글쓰기</a>
-		<?php
-		}
-		?>
-		</div>
-		<div class="paging">
-
-			 <?php echo $paging ?>
-
-		</div>
-		<div class="searchBox">
-
-				<form action="./board.php" method="get">
-
-					<select name="searchColumn">
-
-						<option <?php echo $searchColumn=='title'?'selected="selected"':null?> value="title">제목</option>
-
-						<option <?php echo $searchColumn=='b_content'?'selected="selected"':null?> value="b_content">내용</option>
-
-						<option <?php echo $searchColumn=='user_id'?'selected="selected"':null?> value="user_id">작성자</option>
-
-					</select>
-
-					<input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
-
-					<button type="submit">검색</button>
-
-				</form>
-
-			</div>
-
-	</article>
-
-</body>
-
+							
+	</body>
+										
+										
 </html>

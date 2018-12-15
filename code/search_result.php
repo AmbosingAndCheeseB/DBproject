@@ -270,27 +270,20 @@
 
 		</div>
 		
-		<div class="searchBox">
+		<article class="boardArticle">
 
-				<form action="./board.php" method="get">
+		<div id="searchbox" class="container">
+			<form method="get" action="search_result.php" class = "Search">
 
-					<select name="searchColumn">
+			  <select name="searchColumn" class="select">
+				<option value="h_name" selected="selected">병원이름/진료과목</option>
+				<option value="h_symptom">증상/내용</option>
+			  </select>
+			  <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
+			  <input type="text" name="search" class="Search-box" autocomplete="off">
+			</form>
+		</div>
 
-						<option <?php echo $searchColumn=='title'?'selected="selected"':null?> value="title">제목</option>
-
-						<option <?php echo $searchColumn=='b_content'?'selected="selected"':null?> value="b_content">내용</option>
-
-						<option <?php echo $searchColumn=='user_id'?'selected="selected"':null?> value="user_id">작성자</option>
-
-					</select>
-
-					<input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
-
-					<button type="submit">검색</button>
-
-				</form>
-
-			</div>
 
 	</article>
 
