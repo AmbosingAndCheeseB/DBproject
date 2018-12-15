@@ -94,7 +94,7 @@ session_start();
 		// 주소-좌표 변환 객체를 생성합니다
 		var geocoder = new daum.maps.services.Geocoder();
 		
-		
+		var count = 0;
 
 	
 		<?php
@@ -104,7 +104,8 @@ session_start();
 		?>
 	
 		geocoder.addressSearch('<?php echo $row['Address']; ?>', function(result, status) {
-
+			
+			
 		// 정상적으로 검색이 완료됐으면 
 			 if (status === daum.maps.services.Status.OK) {
 
@@ -117,18 +118,15 @@ session_start();
 				});
 
 				// 인포윈도우로 장소에 대한 설명을 표시합니다
-				var infowindow = new daum.maps.InfoWindow({
-					
-					content:'<div class="wrap">' + 
+				var overlay = new daum.maps.CustomOverlay({
+					map : map,
+					position : marker.getPosition(),
+					content: '<div class="wrap">' + 
 				'    <div class="info">' + 
 				'        <div class="title">' + 
 				'            <?php echo $row['Hospital_Name']?>' + 
-				'            <div class="close" onclick="closeOverlay(infowindow)" title="닫기"></div>' + 
 				'        </div>' + 
-				'        <div class="body">' + 
-				'            <div class="img">' +
-				'                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-				'           </div>' + 
+				'        <div class="body">' +           
 				'            <div class="desc">' + 
 				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
 				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
@@ -138,39 +136,33 @@ session_start();
 				'    </div>' +    
 				'</div>'
 				});
-				
+				overlay.setMap(null);
 				 
-				 daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-				 daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-				 daum.maps.event.addListener(marker, 'click', makeClickListener(map));
 				
-				 function makeOverListener(map, marker, infowindow) {
-					return function() {
-					infowindow.open(map, marker);
-					};
-				}
+				 daum.maps.event.addListener(marker, 'click', makeClickListener(map, overlay));
 
-				// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-				function makeOutListener(infowindow) {
-					return function() {
-						infowindow.close();
-					};
-				}
-				  function makeClickLinstener(map) {
-					return function() {
-						infowindow.setMap(map);
-					};
-				}
 				 
-				 function closeOverlay(infowindow) {
-						infowindow.setMap(null);    
-					}
+			 function makeClickListener(map, overlay) {
+					return function() {
+							
+						if(count == 0)
+						{
+							overlay.setMap(map);
+							count = count + 1;
+						}
+							
+						else{
+							overlay.setMap(null);
+							count = 0;
+						}
+
+					};
+				}
+			
 
 				}
-				 
-			
-			}
-			
+			 
+
 
 		});
 		
@@ -191,10 +183,13 @@ session_start();
 			center: new daum.maps.LatLng(35.8343547, 127.1292019),
 			level: 8
 		};
-
+		 
+	
 		var map = new daum.maps.Map(container, options);
 		// 주소-좌표 변환 객체를 생성합니다
 		var geocoder = new daum.maps.services.Geocoder();
+	
+		var count = 0;
 		
 		<?php
 			while($row = $result->fetch_array())
@@ -203,7 +198,8 @@ session_start();
 		?>
 
 		geocoder.addressSearch('<?php echo $row['Address']; ?>', function(result, status) {
-
+			
+			
 		// 정상적으로 검색이 완료됐으면 
 			 if (status === daum.maps.services.Status.OK) {
 
@@ -216,18 +212,15 @@ session_start();
 				});
 
 				// 인포윈도우로 장소에 대한 설명을 표시합니다
-				var infowindow = new daum.maps.InfoWindow({
-					position : coords,
+				var overlay = new daum.maps.CustomOverlay({
+					map : map,
+					position : marker.getPosition(),
 					content: '<div class="wrap">' + 
 				'    <div class="info">' + 
 				'        <div class="title">' + 
 				'            <?php echo $row['Hospital_Name']?>' + 
-				'            <div class="close" onclick="closeOverlay(infowindow)" title="닫기"></div>' + 
 				'        </div>' + 
-				'        <div class="body">' + 
-				'            <div class="img">' +
-				'                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-				'           </div>' + 
+				'        <div class="body">' +           
 				'            <div class="desc">' + 
 				'                <div class="ellipsis"><?php echo $row['Address']?></div>' + 
 				'                <div class="jibun ellipsis"><?php echo $row['Call_Number']?></div>' + 
@@ -237,37 +230,33 @@ session_start();
 				'    </div>' +    
 				'</div>'
 				});
-				//infowindow.open(map, marker);
+				overlay.setMap(null);
 				 
-				 daum.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-				 daum.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-				 daum.maps.event.addListener(marker, 'click', makeClickListener(map, infowindow));
 				
-				 function makeOverListener(map, marker, infowindow) {
-				return function() {
-					infowindow.open(map, marker);
-				};
-			}
+				 daum.maps.event.addListener(marker, 'click', makeClickListener(map, overlay));
 
-			// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-			function makeOutListener(infowindow) {
-				return function() {
-					infowindow.close();
-				};
-			}
 				 
-			 function makeClickListener(map, infowindow) {
+			 function makeClickListener(map, overlay) {
 					return function() {
-						infowindow.setMap(map);
+							
+						if(count == 0)
+						{
+							overlay.setMap(map);
+							count = count + 1;
+						}
+							
+						else{
+							overlay.setMap(null);
+							count = 0;
+						}
+
 					};
 				}
-				 
-				 function closeOverlay(infowindow) {
-						infowindow.setMap(null);    
-					}
+			
 
 				}
-			
+			 
+
 
 		});
 		
