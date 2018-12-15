@@ -29,6 +29,7 @@ input[type="search"] {
   box-shadow: 0 3px 12px -1px rgba(0, 0, 0, .3);
 	font-size: 1.5em;
 	font-family: 'Noto Sans KR', sans-serif;
+	border-radius: 10px;
 }
 
 .Search-box {
@@ -40,6 +41,7 @@ input[type="search"] {
   font-size: 2.7em;
 	font-family: 'Noto Sans KR', sans-serif;
   box-shadow: 0 3px 12px -1px rgba(0, 0, 0, .3);
+	border-radius: 10px;
 }
 
 #sr{
