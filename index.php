@@ -73,6 +73,7 @@ session_start();
 	if(isset($_GET['map_search']))
 	{
 		$hospi_name = $_GET['map_search'];
+		$hospi_name = preg_replace("/\s+/", "", $hospi_name);
 		$sql = 'select * from hospital where Hospital_Name like "%'. $hospi_name .'%"';
 		$result = $db->query($sql);
 

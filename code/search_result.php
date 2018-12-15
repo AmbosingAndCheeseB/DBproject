@@ -2,6 +2,8 @@
 	include "dbconfig.php";
 	
 	$search = $_GET["search"];
+	$search = preg_replace("/\s+/", "", $search);
+
 	$searchColumn = $_GET['searchColumn'];
 	
 	
