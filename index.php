@@ -46,7 +46,11 @@ session_start();
 	?>
 	
 </ul>
-		
+	
+<div style="text-align: center">
+	<img src="image/logo.png" style="margin: 100px auto 0px auto">
+</div>
+	
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
 	
