@@ -210,9 +210,9 @@
 					if($_SESSION['authority']==77)
 					{
 						?>
-					<th scope="col" class="hos_modi">수정</th>
+					<th scope="col">수정</th>
 					
-					<th scope="col" class="hos_dele">삭제</th>
+					<th scope="col">삭제</th>
 					
 					<?php
 					}
