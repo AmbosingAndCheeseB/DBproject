@@ -112,7 +112,7 @@
 
 	
 
-	$paging = '<ul>'; // 페이징을 저장할 변수
+	$paging = '<ul id="pagination">'; // 페이징을 저장할 변수
 
 	$search_temp = "&amp;searchColumn=".$searchColumn."&amp;search=".$search;
 
@@ -120,7 +120,7 @@
 
 	if($page != 1) { 
 
-		$paging .= '<li class="page page_start"><a href="./search_result.php?page=1'.$search_temp.'">처음</a></li>';
+		$paging .= '<li class="blocks"><a href="./search_result.php?page=1'.$search_temp.'">처음</a></li>';
 
 	}
 
@@ -128,7 +128,7 @@
 
 	if($currentSection != 1) { 
 
-		$paging .= '<li class="page page_prev"><a href="./search_result.php?page=' . $prevPage . $search_temp. '">이전</a></li>';
+		$paging .= '<li class="blocks"><a href="./search_result.php?page=' . $prevPage . $search_temp. '">이전</a></li>';
 
 	}
 
@@ -138,11 +138,11 @@
 
 		if($i == $page) {
 
-			$paging .= '<li class="page current">' . $i . '</li>';
+			$paging .= '<li class="blocks active">' . $i . '</li>';
 
 		} else {
 
-			$paging .= '<li class="page"><a href="./search_result.php?page=' . $i .$search_temp. '">' . $i . '</a></li>';
+			$paging .= '<li class="blocks"><a href="./search_result.php?page=' . $i .$search_temp. '">' . $i . '</a></li>';
 
 		}
 
@@ -154,7 +154,7 @@
 
 	if($currentSection != $allSection) { 
 
-		$paging .= '<li class="page page_next"><a href="./search_result.php?page=' . $nextPage . $search_temp.'">다음</a></li>';
+		$paging .= '<li class="blocks"><a href="./search_result.php?page=' . $nextPage . $search_temp.'">다음</a></li>';
 
 	}
 
@@ -164,7 +164,7 @@
 
 	if($page != $allPage) { 
 
-		$paging .= '<li class="page page_end"><a href="./search_result.php?page=' . $allPage .$search_temp. '">끝</a></li>';
+		$paging .= '<li class="blocks"><a href="./search_result.php?page=' . $allPage .$search_temp. '">끝</a></li>';
 
 	}
 
@@ -195,41 +195,59 @@
 
 	<meta charset="utf-8" />
 
-	<title>후기 게시판</title>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel="stylesheet" href="../css/board.css" />
+	<link rel= "stylesheet" href="../css/board_search.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
-
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	
 </head>
 
 <body>
 
-	<article class="boardArticle">
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="board.php">게시판</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li><a href="login.php">로그인</a></li>
+				<li><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			echo '<li><a href="logout.php">로그아웃</a><li>';
+		}
+	?>
+	
+</ul>
 
-		<h3>아프니까 병원이다</h3>
-
-		<table>
-
-			<caption class="readHide">검색 결과</caption>
-
-			<thead>
+		<table class="jbtable" cellspacing="0" cellpadding="0" >
 
 				<tr>
-					<th scope="col" class="hosp_id">번호</th>
+					<th scope="col">번호</th>
 
-					<th scope="col" class="hosp_name">병원명</th>
+					<th scope="col">병원명</th>
 
-					<th scope="col" class="call_num">전화번호</th>
+					<th scope="col">전화번호</th>
 					
-					<th scope="col" class="hosp_addr"> 주소 </th>
+					<th scope="col"> 주소 </th>
+					
 					<?php 
 					if($_SESSION['authority']==77)
 					{
 						?>
-					<th scope="col" class="hos_modi">수정</th>
+					<th scope="col">수정</th>
 					
-					<th scope="col" class="hos_dele">삭제</th>
+					<th scope="col">삭제</th>
 					
 					<?php
 					}
@@ -237,7 +255,6 @@
 
 				</tr>
 
-			</thead>
 			<?php
 			if ($_SESSION['authority']==77)
 			{?>
@@ -245,8 +262,6 @@
 			<?
 			}
 			?>
-				
-			<tbody>
 			
 			
 			<?php
@@ -294,21 +309,16 @@
 			?>
 						
 
-		
-
-			</tbody>
 
 		</table>
 
-		
-		</div>
-		<div class="paging">
+
+		<div id="wrap">
 
 			<?php echo $paging ?>
 
 		</div>
 		
-		<article class="boardArticle">
 
 		<div id="searchbox" class="container">
 			<form method="get" action="search_result.php" class = "Search">
@@ -321,9 +331,6 @@
 			  <input type="text" name="search" class="Search-box" autocomplete="off">
 			</form>
 		</div>
-
-
-	</article>
 
 </body>
 
