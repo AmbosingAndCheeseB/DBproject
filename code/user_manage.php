@@ -32,49 +32,50 @@
 	<meta charset="utf-8" />
 
 	<title>유저 관리 페이지</title>
-
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
 	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel="stylesheet" href="../css/board.css" />
 	
 </head>
 	
 
 
 <body>
+	
+<ul class="menubar">
+	<li><a href="../index.php">홈</a></li>
+	<li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	<li style = "float:right; background: #DBF0F8"><a href="user_manage.php">유저 관리 페이지</a><li>
+	<li style = "float:right"><a href="logout.php">로그아웃</a><li>
+	<?php echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>'; ?>
+</ul>
 
-	<article class="boardArticle">
 
-		<h3>아프니까 병원이다</h3>
+		<table class="jbtable" cellspacing="0" cellpadding="0" >
 
-		<table>
-
-			<caption class="readHide"> 유저 관리 페이지</caption>
-
-			<thead>
 
 				<tr>
-					<th scope="col" class="userid">ID</th>
+					<th scope="col"> ID</th>
 
-					<th scope="col" class="name">이름</th>
+					<th scope="col"> 이름</th>
 
-					<th scope="col" class="gender">성별</th>
+					<th scope="col"> 성별</th>
 					
-					<th scope="col" class="autho">권한</th>
+					<th scope="col"> 권한</th>
 					
-					<th scope="col" class="autho_updown">권한 변경</th>
+					<th scope="col"> 권한 변경</th>
 					
-					<th scope="col" class="delete_user">회원 탈퇴</th>
+					<th scope="col"> 회원 탈퇴</th>
 
 				</tr>
 
-			</thead>
-			
-			
-			
-			
-			<tbody>
 			<?php
 			
 						
@@ -128,11 +129,8 @@
 								};
 							
 			?>
-				</tbody>
 
 		</table>
-			
-	</article>
 
 </body>
 

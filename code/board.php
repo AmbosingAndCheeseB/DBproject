@@ -256,7 +256,6 @@
 	?>
 	
 </ul>
-		<table>
 
 			<table class="jbtable" cellspacing="0" cellpadding="0" >
 
