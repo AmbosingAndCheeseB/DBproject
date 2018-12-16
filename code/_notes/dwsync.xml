@@ -8,4 +8,6 @@
 <file name="login_ok.php" server="210.117.181.21:2018" local="131893566923606524" remote="131893566600000000" Dst="0" />
 <file name="logout.php" server="210.117.181.21:2018" local="131893528939497763" remote="131893528800000000" Dst="0" />
 <file name="hospital.php" server="210.117.181.21:2018" local="131894071082143929" remote="131894071200000000" Dst="0" />
+<file name="signup.php" server="210.117.181.21:2018//s201615383/" local="131894484515079733" remote="131894484000000000" Dst="0" />
+<file name="login.php" server="210.117.181.21:2018//s201615383/" local="131894485810000000" remote="131894485800000000" Dst="0" />
 </dwsync>
