@@ -135,7 +135,7 @@
 
 	
 
-	$paging = '<ul>'; // 페이징을 저장할 변수
+	$paging = '<ul id="pagination">'; // 페이징을 저장할 변수
 
 	
 
@@ -143,7 +143,7 @@
 
 	if($page != 1) { 
 
-		$paging .= '<li class="page page_start"><a href="./board.php?page=1' . $subString . '">처음</a></li>';
+		$paging .= '<li class="blocks"><a href="./board.php?page=1' . $subString . '">처음</a></li>';
 
 	}
 
@@ -151,7 +151,7 @@
 
 	if($currentSection != 1) { 
 
-		$paging .= '<li class="page page_prev"><a href="./board.php?page=' . $prevPage . $subString . '">이전</a></li>';
+		$paging .= '<li class="blocks"><a href="./board.php?page=' . $prevPage . $subString . '">이전</a></li>';
 
 	}
 
@@ -161,11 +161,11 @@
 
 		if($i == $page) {
 
-			$paging .= '<li class="page current">' . $i . '</li>';
+			$paging .= '<li class="blocks active">' . $i . '</li>';
 
 		} else {
 
-			$paging .= '<li class="page"><a href="./board.php?page=' . $i . $subString . '">' . $i . '</a></li>';
+			$paging .= '<li class="blocks"><a href="./board.php?page=' . $i . $subString . '">' . $i . '</a></li>';
 
 		}
 
@@ -177,7 +177,7 @@
 
 	if($currentSection != $allSection) { 
 
-		$paging .= '<li class="page page_next"><a href="./board.php?page=' . $nextPage . $subString . '">다음</a></li>';
+		$paging .= '<li class="blocks"><a href="./board.php?page=' . $nextPage . $subString . '">다음</a></li>';
 
 	}
 
@@ -187,7 +187,7 @@
 
 	if($page != $allPage) { 
 
-		$paging .= '<li class="page page_end"><a href="./board.php?page=' . $allPage . $subString .'">끝</a></li>';
+		$paging .= '<li class="blocks"><a href="./board.php?page=' . $allPage . $subString .'">끝</a></li>';
 
 	}
 
@@ -217,43 +217,62 @@
 
 	<meta charset="utf-8" />
 
-	<title>후기 게시판</title>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel="stylesheet" href="../css/board.css" />
+	<link rel= "stylesheet" href="../css/board_search.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
-
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	
 </head>
 
 <body>
 
-	<article class="boardArticle">
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="hospital.php">병원 정보</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li style = "float:right"><a href="login.php">로그인</a></li>
+				<li style = "float:right"><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			echo $_SESSION["nickname"].' 님 환영합니다!';
+			
 
-		<h3>후기 자유게시판</h3>
-
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			
+			echo '<li style = "float:right"><a href="logout.php">로그아웃</a><li>';
+		}
+	?>
+	
+</ul>
 		<table>
 
-			<caption class="readHide">후기 자유게시판</caption>
-
-			<thead>
+			<table class="jbtable" cellspacing="0" cellpadding="0" >
 
 				<tr>
 
-					<th scope="col" class="no">번호</th>
+					<th scope="col">번호</th>
 
-					<th scope="col" class="title">제목</th>
+					<th scope="col" >제목</th>
 
-					<th scope="col" class="author">작성자</th>
+					<th scope="col">작성자</th>
 
-					<th scope="col" class="date">작성일</th>
+					<th scope="col">작성일</th>
 
-					<th scope="col" class="hit">조회</th>
+					<th scope="col">조회</th>
 
 				</tr>
 
-			</thead>
-
-			<tbody>
 
 					<?php
 					if(isset($emptyData)) {
@@ -315,9 +334,8 @@
 
 					?>
 
-			</tbody>
-
 		</table>
+	
 		<div class="btnSet">
 		<?php
 		if(isset($_SESSION["userid"]))
@@ -334,11 +352,12 @@
 			 <?php echo $paging ?>
 
 		</div>
-		<div class="searchBox">
+	
+		<div id="searchbox" class="container">
 
-				<form action="./board.php" method="get">
+				<form action="board.php" method="get" class = "Search">
 
-					<select name="searchColumn">
+					<select name="searchColumn" class="select">
 
 						<option <?php echo $searchColumn=='title'?'selected="selected"':null?> value="title">제목</option>
 
@@ -348,15 +367,13 @@
 
 					</select>
 
-					<input type="text" name="searchText" value="<?php echo isset($searchText)?$searchText:null?>">
+					<input type="text" name="searchText" class="Search-box" value="<?php echo isset($searchText)?$searchText:null?>">
 
-					<button type="submit">검색</button>
+					<button type="submit" id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
 
 				</form>
 
 			</div>
-
-	</article>
 
 </body>
 
