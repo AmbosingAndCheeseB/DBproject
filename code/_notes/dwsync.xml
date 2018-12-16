@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="user_manage.php" server="210.117.181.21:2018" local="131892661829010299" remote="131892666600000000" Dst="0" />
-<file name="detail.php" server="210.117.181.21:2018" local="131893373912548448" remote="131893374000000000" Dst="0" />
-<file name="hospital_info.php" server="210.117.181.21:2018" local="131893363331189653" remote="131893363200000000" Dst="0" />
+<file name="detail.php" server="210.117.181.21:2018" local="131893523974297955" remote="131893524000000000" Dst="0" />
 <file name="hos_modi_update.php" server="210.117.181.21:2018" local="131893370089621977" remote="131893369800000000" Dst="0" />
 <file name="hospital_modify.php" server="210.117.181.21:2018" local="131893370335926442" remote="131893370400000000" Dst="0" />
+<file name="search_result.php" server="210.117.181.21:2018" local="131893564530024645" remote="131893564800000000" Dst="0" />
+<file name="login_ok.php" server="210.117.181.21:2018" local="131893566923606524" remote="131893566600000000" Dst="0" />
+<file name="logout.php" server="210.117.181.21:2018" local="131893528939497763" remote="131893528800000000" Dst="0" />
+<file name="hospital.php" server="210.117.181.21:2018" local="131894071082143929" remote="131894071200000000" Dst="0" />
 </dwsync>
