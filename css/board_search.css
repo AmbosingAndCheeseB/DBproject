@@ -13,7 +13,7 @@ input[type="search"] {
 
 .container {
   width: 500px;
-  margin: 30px auto 0 20px;
+  margin: 30px auto 100px auto;
 }
 
 .Search {
