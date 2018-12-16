@@ -255,13 +255,7 @@
 
 				</tr>
 
-			<?php
-			if ($_SESSION['authority']==77)
-			{?>
-				<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
-			<?
-			}
-			?>
+		
 			
 			
 			<?php
@@ -319,7 +313,13 @@
 
 		</div>
 		
-
+<?php
+			if ($_SESSION['authority']==77)
+			{?>
+				<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
+			<?php
+			}
+			?>
 		<div id="searchbox" class="container">
 			<form method="get" action="search_result.php" class = "Search">
 
