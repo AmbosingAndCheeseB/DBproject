@@ -30,9 +30,9 @@
 				
                	<input type="password" name="userpw" placeholder="Password" style="margin-bottom: 70px" required>
 				
-        		<a href="signup.php">계정이 없으신가요?</a> </label>
+        		<a href="signup.php">계정이 없으신가요?</a>
 				
-				<button type="submit" id="btn" class="btn btn-lg btn-primary btn-block" >로그인</button>
+				<button type="submit" id="btn">로그인</button>
 				
 				</form>
 	</section>
