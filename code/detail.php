@@ -28,24 +28,55 @@
 	<meta charset="utf-8" />
 
 	<title>병원 상세정보</title>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/detail.css">
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
 
 </head>
+	
 	<script>
 		function back()
 		{
 			history.back();
 		}
 	</script>
+	
 	<body>
-		<h2>병원 상세정보</h2>
-		<br>
-		<br>
-		<hr>
+		
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li style = "float:right"><a href="login.php">로그인</a></li>
+				<li style = "float:right"><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
+			echo $_SESSION["nickname"].' 님 환영합니다!';
+			
 
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			
+			echo '<li style = "float:right"><a href="logout.php">로그아웃</a><li>';
+		}
+	?>
+	
+</ul>		
+		
+	<div class = "container">
+		<div class = "content">
+		
 
 		<h3>병원 이름</h3>
 		<p>
@@ -60,7 +91,7 @@
 		<br>
 		<hr>
 
-	
+
 		<h3>전화번호</h3>
 
 		<p>
@@ -118,7 +149,6 @@
 		
 			</tr>
 			</table>
-
 
 		
 		<br>
@@ -234,9 +264,6 @@
 
 				
 		
-		
-		
-		<div class="btnSet">
 
 
 				<?php
@@ -257,7 +284,8 @@
 			
 			<INPUT type="button" name="back_btn" value="목록" onclick = 'back()'>
 			
-			
+			</div>
+		</div>
 			
 		</body>
 
