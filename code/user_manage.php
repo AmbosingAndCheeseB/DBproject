@@ -110,15 +110,15 @@
 																					?> </td>
 													<td class = 'autho_updown'>
 													<form name = "auto_update1" method ="post" action = "autho_up.php?user_id=<?php echo $row['user_id'];?>">
-														<button type="submit" id="btn1" >관리자 권한</button>
+														<button type="submit" id="btn1" class = "btn" style="height: 40px; margin-bottom: 5px">관리자</button>
 													</form>
 													<form name = "auto_update2" method ="post" action = "autho_down.php?user_id=<?php echo $row['user_id'];?>">
-														<button type="submit" id="btn2" >사용자 권한</button>
+														<button type="submit" id="btn2" class = "btn" style="height: 40px">사용자</button>
 													</form>
 													</td>
 													<td class = 'delete_user'>
 													<form name = "delete_user" method="post" action = "delete_user.php?user_id=<?php echo $row['user_id'];?>">
-														<button type = "submit" id="btn3">탈퇴</button>
+														<button type = "submit" id="btn3" class = "btn">탈퇴</button>
 													</form>
 													</td>
 												</tr>

@@ -217,9 +217,9 @@
 					if($_SESSION['authority']==77)
 					{
 						?>
-					<th scope="col">수정</th>
+					<th scope="col"></th>
 					
-					<th scope="col">삭제</th>
+					<th scope="col"></th>
 					
 					<?php
 					}
@@ -227,13 +227,9 @@
 
 				</tr>
 
-		
-			
 			
 			<?php
 			
-						
-						
 								while($s_result = $result->fetch_array()){
 									
 									?><html>
@@ -247,11 +243,11 @@
 													if($_SESSION['authority']==77)
 													{
 														?>
-														<td class="hos_modi"><input type="button" value = "병원정보 수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
+														<td class="hos_modi"><input type="button" class = "btn" style="font-size: 20px; width:60px; height: 40px" value = "수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
 														echo $s_result[0];
 														?>'"></td>
 
-														<td class="hos_dele"><input type="button" value = "병원정보 삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
+														<td class="hos_dele"><input type="button" class = "btn" style="font-size: 20px; width: 60px; height: 40px" value = "삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
 															echo $s_result[0];
 														?>'"></td>
 											<?php
@@ -262,32 +258,27 @@
 											</body>
 										</html>
 								<?php	
-								};
-							
-						
-						
-						
-					
+								};	
+				
 			?>
-						
 
-		
 
 		</table>
 
 		
+			<?php
+			if ($_SESSION['authority']==77)
+			{?>
+				<input type="button" value = "병원정보 추가" class="btn" style="width: 150px; margin-left: 1510px" onclick = "location.href = 'hospital_add.php'">
+			<?php
+			}
+			?>
+	
 		<div id="wrap">
 
 			<?php echo $paging ?>
 
 		</div>
-			<?php
-			if ($_SESSION['authority']==77)
-			{?>
-				<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
-			<?php
-			}
-			?>
 		
 		<div id="searchbox" class="container">
 			<form method="get" action="search_result.php" class = "Search">

@@ -341,17 +341,17 @@
 
 		</table>
 	
-		<div class="btnSet">
 		<?php
 		if(isset($_SESSION["userid"]))
 		{
 			?>
 
-			<a href="./board_write.php" class="btnWrite btn">글쓰기</a>
+			<button type = "button" onclick="location.href='board_write.php' " class="btn" style = "margin-left: 1600px">글쓰기</button>
 		<?php
 		}
 		?>
-		</div>
+	
+	
 		<div class="paging">
 
 			 <?php echo $paging ?>
