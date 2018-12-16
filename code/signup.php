@@ -21,8 +21,10 @@
 	
 	<ul class="menubar">
   		<li><a href="../index.php">홈</a></li>
- 	 	<li><a href="../code/board.php">게시판</a></li>
-		<li><a href="code/hospital.php">병원 정보</a></li>
+ 	 	<li><a href="board.php">게시판</a></li>
+		<li><a href="hospital.php">병원 정보</a></li>
+		<li style = "float:right"><a href="login.php">로그인</a></li>
+		<li style = "float:right; background: #DBF0F8"><a href="signup.php">회원가입</a></li>
 	</ul>
 	
 	<section>

@@ -175,8 +175,9 @@
 <body>
 
 <ul class="menubar">
-  <li><a href="../index.php">홈</a></li>
-  <li><a href="board.php">게시판</a></li>
+  	<li><a href="../index.php">홈</a></li>
+ 	 <li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php" style = "background: #DBF0F8">병원 정보</a></li>
 	
 	<?php
 		if(!$_SESSION['is_login']){
