@@ -198,7 +198,10 @@
 	
 </ul>
 	
-
+<div style="text-align: center">
+	<img src="../image/logo.png" style="width: 50%; margin: 100px auto 0px auto">
+</div>
+	
 		<table class="jbtable" cellspacing="0" cellpadding="0" >
 
 				<tr>

@@ -10,4 +10,7 @@
 <file name="hospital.php" server="210.117.181.21:2018" local="131894071082143929" remote="131894071200000000" Dst="0" />
 <file name="signup.php" server="210.117.181.21:2018//s201615383/" local="131894484515079733" remote="131894484000000000" Dst="0" />
 <file name="login.php" server="210.117.181.21:2018//s201615383/" local="131894485810000000" remote="131894485800000000" Dst="0" />
+<file name="board.php" server="210.117.181.21:2018//s201615383/" local="131894489085787031" remote="131894488800000000" Dst="0" />
+<file name="hospital.php" server="210.117.181.21:2018//s201615383/" local="131894489714643409" remote="131894489400000000" Dst="0" />
+<file name="search_result.php" server="210.117.181.21:2018//s201615383/" local="131894490207314920" remote="131894490000000000" Dst="0" />
 </dwsync>
