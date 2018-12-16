@@ -20,7 +20,7 @@ body {
 	float: left;
   display: inline-block;
 }
-.menubar>li>a {
+.menubar>li>a{
   display: block;
   text-decoration: none;
   padding: 10px 20px;
@@ -30,4 +30,12 @@ body {
 }
 .menubar>li>a:hover {
   background:#AEE4FF;
+}
+
+#nick {
+	display: block;
+  padding: 10px 20px;
+  color:#4925D7;
+	font-size: 1.3em;
+	font-family: 'Noto Sans KR', sans-serif;
 }

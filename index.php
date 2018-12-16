@@ -34,15 +34,14 @@ session_start();
 				<li style = "float:right"><a href="code/signup.php">회원가입</a></li>';
 		}
 		else if($_SESSION['is_login']){
-			echo $_SESSION["nickname"].' 님 환영합니다!';
-			
 
 			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
-				echo '<li><a href="code/user_manage.php">유저 관리 페이지</a><li>';
+				echo '<li style = "float:right"><a href="code/user_manage.php">유저 관리 페이지</a><li>';
 			}
 			
 			
 			echo '<li style = "float:right"><a href="code/logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>';
 		}
 	?>
 	
