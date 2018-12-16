@@ -215,18 +215,23 @@
 <ul class="menubar">
   <li><a href="../index.php">홈</a></li>
   <li><a href="board.php">게시판</a></li>
+	<li><a href="code/hospital.php">병원 정보</a></li>
 	
 	<?php
 		if(!$_SESSION['is_login']){
-			echo ' <li><a href="login.php">로그인</a></li>
-				<li><a href="signup.php">회원가입</a></li>';
+			echo ' <li style = "float:right"><a href="code/login.php">로그인</a></li>
+				<li style = "float:right"><a href="code/signup.php">회원가입</a></li>';
 		}
 		else if($_SESSION['is_login']){
+			echo $_SESSION["nickname"].' 님 환영합니다!';
+			
+
 			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
-				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+				echo '<li><a href="code/user_manage.php">유저 관리 페이지</a><li>';
 			}
 			
-			echo '<li><a href="logout.php">로그아웃</a><li>';
+			
+			echo '<li style = "float:right"><a href="code/logout.php">로그아웃</a><li>';
 		}
 	?>
 	

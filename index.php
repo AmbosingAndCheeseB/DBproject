@@ -30,8 +30,8 @@ session_start();
 	
 	<?php
 		if(!$_SESSION['is_login']){
-			echo ' <li><a href="code/login.php">로그인</a></li>
-				<li><a href="code/signup.php">회원가입</a></li>';
+			echo ' <li style = "float:right"><a href="code/login.php">로그인</a></li>
+				<li style = "float:right"><a href="code/signup.php">회원가입</a></li>';
 		}
 		else if($_SESSION['is_login']){
 			echo $_SESSION["nickname"].' 님 환영합니다!';
@@ -42,7 +42,7 @@ session_start();
 			}
 			
 			
-			echo '<li><a href="code/logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><a href="code/logout.php">로그아웃</a><li>';
 		}
 	?>
 	
