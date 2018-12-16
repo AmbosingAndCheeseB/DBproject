@@ -54,17 +54,9 @@
 
 	<title>후기 자유게시판</title>
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
-
 </head>
 
 <body>
-
-	<article class="boardArticle">
-
-	<h3>후기 자유게시판 글쓰기</h3>
 
 	<div id="boardView">
 
@@ -79,8 +71,6 @@
 			<span id="boardVisit">조회: <?php echo $row['visit']?></span>
 
 		</div>
-		
-
 		
 		
 		
@@ -126,13 +116,7 @@
 				</div>
 			</form>
 		
-			
-		
-		
-		
-		
-		
-		
+
 		<script>
 			function del(href)
 			{
@@ -176,8 +160,6 @@
 	</div>
 
 	</div>
-
-</article>
 
 </body>
 
