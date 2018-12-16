@@ -61,7 +61,7 @@ session_start();
 </div>
 
 	
-<div id="searchbox" class="container" style="margin: 250px auto auto; width: 800px">
+<div id="searchbox" class="container" style="margin: 250px auto 50px auto; width: 800px">
 	<form method="get" action="index.php" class = "Search">
       <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
       <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 2.0em" autocomplete="off">
@@ -81,7 +81,7 @@ session_start();
 		
 		
 		?>
-	<div id="map" style="margin:40px auto 150px auto; width:1000px;height:600px;"></div>
+	<div id="map" style="margin:40px auto 0px auto; width:1000px;height:600px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
 <script>
 		var container = document.getElementById('map');
@@ -167,15 +167,18 @@ session_start();
 		});
 		
 		<?php }?>
+	
+	</script>
 <?php	
 	}
+	
 	else{
 		
 		$sql = 'select * from hospital';
 		$result = $db->query($sql);
 
 		?>
-		<div id="map" style="margin:40px auto 150px auto; width:1000px;height:600px;"></div>
+		<div id="map" style="margin:40px auto 0px auto; width:1000px;height:600px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
 	<script>
 		var container = document.getElementById('map');
@@ -270,7 +273,7 @@ session_start();
 	</script>
 	<p>마커를 한번 클릭하면 병원 정보가 나타나고, 두번 클릭하면 사라집니다.
 	</p>
-</div>
+
  
 </body>
 </html>
