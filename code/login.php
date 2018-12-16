@@ -22,6 +22,10 @@
 		<li style = "float:right"><a href="signup.php">회원가입</a></li>
 	</ul>
 	
+<div style="text-align: center">
+	<img src="../image/logo.png" style="width: 50%; margin: 100px auto 0px auto">
+</div>
+	
 	<section>
 	<form method="post" action="login_ok.php">
 				

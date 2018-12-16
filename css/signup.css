@@ -9,10 +9,10 @@
 
 section {
   width: 500px;
-	height: 620px;
+	height: 600px;
   background: white;
-  padding: 20px 30px 30px;
-  margin: 250px auto auto;
+  padding: 15px 30px 30px;
+  margin: 40px auto auto;
   text-align: center;
   border-radius: 10px;
 }
@@ -60,7 +60,7 @@ button {
   background: #3498db;
   color: #ecf0f1;
   font-size: 30px;
-  margin: 45px auto auto;
+  margin: 30px auto auto;
   border-radius: 5px;
   border-bottom: 3px solid #2980b9;
 	font-family: 'Noto Sans KR', sans-serif;
