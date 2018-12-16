@@ -46,36 +46,79 @@
 
 <!DOCTYPE html>
 
-<html>
-
-<head>
+<html><head>
 
 	<meta charset="utf-8" />
 
 	<title>후기 자유게시판</title>
-
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/detail.css">
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 </head>
 
+	
 <body>
 
-	<div id="boardView">
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li style = "float:right"><a href="login.php">로그인</a></li>
+				<li style = "float:right"><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
 
-		<h3 id="boardTitle"><?php echo $row['title']?></h3>
-
-		<div id="boardInfo">
-
-			<span id="boardID">작성자: <?php echo $row['user_id']?></span>
-
-			<span id="boardDate">작성일: <?php echo $row['b_date']?></span>
-
-			<span id="boardVisit">조회: <?php echo $row['visit']?></span>
-
-		</div>
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li style = "float:right"><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			
+			echo '<li style = "float:right"><a href="logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>';
+		}
+	?>
+	
+</ul>
+	
+	
+	<table class="jbtable">
 		
+		<tr>
+			<th scope="row">제목</th>
+			<td><?php echo $row['title']?></td>
+		</tr>
 		
+		<tr>
+			<th scope="row">작성자</th>
+			<td><?php echo $row['user_id']?></td>
+		</tr>
 		
-		<div id="boardContent"><?php echo $row['b_content']?></div>
-		<?php
+		<tr>
+			<th scope="row">작성일</th>
+			<td><?php echo $row['b_date']?></td>
+		</tr>
+		
+		<tr>
+			<th scope="row">조회</th>
+			<td><?php echo $row['visit']?></td>
+		</tr>
+
+		<tr>
+			<th scope="row">내용</th>
+			<td><?php echo $row['b_content']?></td>
+		</tr>
+
+		<tr>
+			<th scope="row">댓글</th>
+			<td><?php
 			
 			$sql3 = "select * from comment where board_num = ". $bNo;
 			
@@ -84,54 +127,38 @@
 			
 			while($row3 = $result3 ->fetch_assoc())
 			{
-				?>
-				
-			<div id = comment_writer_title">
-			<ul>
-				<li id = "writer_title1"><?php echo $row3['user_id'];?></li>
-				<li id = "writer_title2"><?php echo $row3['c_date'];?></li>
+				?><p><?php echo $row3['c_content'];?></p>
+				<p><?php echo $row3['user_id'];?></p>
+				<p><?php echo $row3['c_date'];?></p>
 				&nbsp;&nbsp;
 		
 				<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>
-		
-		
-					
-		
-				
-			</ul>
-			
-			</div>
-			
-			<div id = "comment_content"><?php echo $row3['c_content'];?></div>
+
 			
 			<?php
 			}
-			?>
+			?></td>
+			</tr>
+		
+		</table>
 	
 			<form name = "comment_form" method ="post" action = "insert_comment.php?board_num=<?php echo $bNo;?>">
-				<div id = "comment_box">
 					<li id = "comment_insert"> 덧글쓰기 </li>
 				<div id = "comment_box1"><textarea rows="5" cols="65" name="c_content" required></textarea>
 				<button type="submit" id="btn" >덧글쓰기</button>
 				</div>
 			</form>
-		
-
-		<script>
-			function del(href)
-			{
-				if(confirm("정말 삭제하시겠습니까?"))
+				
+			<script>
+				function del(href)
 				{
-					document.location.href = href;
+					if(confirm("정말 삭제하시겠습니까?"))
+					{
+						document.location.href = href;
+					}
 				}
-			}
 			
-		</script>
-		
-		
-		
-		<div class="btnSet">
-		
+			</script>
 		
 		<?php
 		if(isset($_SESSION["userid"]))
@@ -156,10 +183,6 @@
 			<?php }
 		} ?>
 		<a href="./board.php">목록</a>
-
-	</div>
-
-	</div>
 
 </body>
 
