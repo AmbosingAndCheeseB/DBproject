@@ -36,3 +36,10 @@
 	text-decoration: none;
 	color: black;
 }
+
+.jbtable input, textarea{
+	width: 80%;
+	border-radius: 10px;
+	border: 0;
+	outline: 0;
+}

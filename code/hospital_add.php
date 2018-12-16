@@ -1,6 +1,7 @@
 <?php
 
-	require_once("./dbconfig.php");
+require_once("./dbconfig.php");
+session_start();
 	
 
 ?>
@@ -14,8 +15,13 @@
 	<meta charset="utf-8" />
 
 	<title>병원정보 추가</title>
-	
-
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/detail.css">
 
 </head>
 	
@@ -30,20 +36,18 @@
 	
 <body>
 
-	<article class="boardArticle">
+<ul class="menubar">
+	<li><a href="../index.php">홈</a></li>
+	<li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	<li style = "float:right"><a href="logout.php">로그아웃</a><li>
+	<?php echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>'; ?>
+</ul>
+	
 
-		<h3>병원정보 추가</h3>
+			<form action="hos_add_update.php" method="post">
 
-		<div id="boardWrite">
-
-			<form action="./hos_add_update.php" method="post">
-
-				<table id="boardWrite">
-
-					<tbody>
-
-						
-
+				<table class="jbtable">
 
 						<tr>
 
@@ -134,24 +138,17 @@
 
 						</tr>
 
-					</tbody>
-
 				</table>
 
 				<div class="btnSet">
 
 					<button type="submit" class="btnSubmit btn">추가</button>
 						
-
 					<INPUT type="button" name="back_btn" value="목록" onclick = 'back()'>
 
 				</div>
 
 			</form>
-
-		</div>
-
-	</article>
 
 </body>
 

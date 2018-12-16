@@ -76,34 +76,23 @@
 	<table class="jbtable">
 		
 		<tr>
-			<th>병원 이름</th>
-		</tr>
-
-		<tr>
+			<th scope="row">병원 이름</th>
 			<td><?php echo $info1[1];?></td>
 		</tr>
 
 		<tr>
-			<th>전화번호</th>
-		</tr>
-			
-		<tr>
+			<th scope="row">전화번호</th>
 			<td><?php echo $info1[2];?></td>
 		</tr>
 		
 		<tr>
-			<th>주소</th>
-		</tr>
-
-		<tr>
+			<th scope="row">주소</th>
 			<td><?php echo $info1[3];?> </td>
 		</tr>
 
+
 		<tr>
-			<th>병원 진료시간</th>
-		</tr>
-		
-		<tr>
+			<th scope="row">병원 진료시간</th>
 			<td>
 				<table style = "width=100%">
 					<tr>
@@ -151,9 +140,7 @@
 		
 		<tr>
 			<th>병원 위치 정보</th>
-		</tr>
-		
-	<tr><td>	
+			<td>	
 	<div id="map" style="width:100%;height:350px;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
 	<script>
@@ -196,13 +183,12 @@
 	
 		});    
 	</script>
-		</td></tr>
+		</td>
+		</tr>
 		
 		<tr>
 			<th>해당 병원 후기 게시판</th>
-		</tr>
-
-		<tr><td>
+			<td>
 		<table style = "width=100%">
 			<tr>
 
@@ -256,7 +242,8 @@
 				?>
 		
 			</table>
-			</td></tr>		
+			</td>
+		</tr>		
 				
 		</table>
 		
