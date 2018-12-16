@@ -26,7 +26,7 @@
 	<form method="post" action="login_ok.php">
 				
 		 		<h1>회원 로그인</h1>
-                <input type="text" name="userid" placeholder="ID" required>
+                <input type="text" name="userid" placeholder="ID" autocomplete="off" required>
 				
                	<input type="password" name="userpw" placeholder="Password" style="margin-bottom: 70px" required>
 				

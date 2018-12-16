@@ -30,9 +30,9 @@
 	<section>
 	<form method="post" action="signup_ok.php">
 		<h1>회원 가입</h1>
-			<input type="text" size="35" name="userid" placeholder="ID" required>
+			<input type="text" size="35" name="userid" placeholder="ID" autocomplete="off" required>
 			<input type="password" size="35" name="userpw" placeholder="Password" required>
-			<input type="text" size="35" name="name" placeholder="Name" required>
+			<input type="text" size="35" name="name" placeholder="Name" autocomplete="off" required>
 		<div style="text-align: left">
 			<label>남<input type="radio" name="sex" value="남">
 			<label>여<input type="radio" name="sex" value="여">

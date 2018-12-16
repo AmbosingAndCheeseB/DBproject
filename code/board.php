@@ -367,7 +367,7 @@
 
 					</select>
 
-					<input type="text" name="searchText" class="Search-box" value="<?php echo isset($searchText)?$searchText:null?>">
+					<input type="text" name="searchText" class="Search-box" autocomplete="off" value="<?php echo isset($searchText)?$searchText:null?>">
 
 					<button type="submit" id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
 

@@ -53,7 +53,7 @@ session_start();
       <select name="searchColumn" class="select">
         <option value="h_name" selected="selected">병원이름/진료과목</option>
         <option value="h_symptom">증상/내용</option>
-		<option value="h_map">지도 검색</option>
+		<option value="h_map">지도 검색 (병원 이름)</option>
       </select>
       <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
       <input type="text" name="search" class="Search-box" autocomplete="off">

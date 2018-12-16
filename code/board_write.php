@@ -69,7 +69,7 @@
 
 				?>
 
-							<input type="text" name="Title" id="Title" placeholder = "제목" value = "<?php echo isset($row['title'])?$row['title']:null?>" required>
+							<input type="text" name="Title" id="Title" autocomplete="off" placeholder = "제목" value = "<?php echo isset($row['title'])?$row['title']:null?>" required>
 
 							<textarea name="bContent" id="bContent" placeholder = "내용" required><?php echo isset($row['b_content'])?$row['b_content']:null?></textarea>
 
