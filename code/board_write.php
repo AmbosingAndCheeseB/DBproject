@@ -73,9 +73,9 @@
 
 							<textarea name="bContent" id="bContent" placeholder = "내용" required><?php echo isset($row['b_content'])?$row['b_content']:null?></textarea>
 
-					<button type="submit" class="btnSubmit btn"> <?php echo isset($bNo)?'수정':'작성'?> </button>
+					<button type="submit"> <?php echo isset($bNo)?'수정':'작성'?> </button>
 						
-					<a href="board.php">목록</a>
+					<button type="button" onclick="location.href= 'board.php' ">목록</button>
 
 			</form>
 	</section>
