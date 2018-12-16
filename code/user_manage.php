@@ -57,6 +57,10 @@
 	<?php echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>'; ?>
 </ul>
 
+	
+<div style="text-align: left">
+	<img src="../image/logo.png" style="width: 600px; margin: 100px auto 0px auto">
+</div>
 
 		<table class="jbtable" cellspacing="0" cellpadding="0" >
 

@@ -48,7 +48,7 @@ session_start();
 </ul>
 	
 <div style="text-align: center">
-	<img src="image/logo.png" style="width: 80%; margin: 150px auto 0px auto">
+	<img src="image/logo.png" style="width: 1400px; margin: 150px auto 0px auto">
 </div>
 	
 <div id="searchbox" class="container">

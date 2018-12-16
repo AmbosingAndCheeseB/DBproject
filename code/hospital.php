@@ -199,7 +199,7 @@
 </ul>
 	
 <div style="text-align: left">
-	<img src="../image/logo.png" style="width: 30%; margin: 100px auto 0px auto">
+	<img src="../image/logo.png" style="width:  600px; margin: 100px auto 0px auto">
 </div>
 	
 		<table class="jbtable" cellspacing="0" cellpadding="0" >
