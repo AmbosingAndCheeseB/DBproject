@@ -56,7 +56,7 @@
 </ul>
 	
 	<section>
-		<h1>글쓰기</h1>
+		<h1>게시글 작성</h1>
 
 			<form action="write_update.php" method="post">
 				<?php
@@ -69,9 +69,9 @@
 
 				?>
 
-							<input type="text" name="Title" id="Title" value = "<?php echo isset($row['title'])?$row['title']:null?>">
+							<input type="text" name="Title" id="Title" placeholder = "제목" value = "<?php echo isset($row['title'])?$row['title']:null?>" required>
 
-							<textarea name="bContent" id="bContent"> <?php echo isset($row['b_content'])?$row['b_content']:null?></textarea>
+							<textarea name="bContent" id="bContent" placeholder = "내용" required><?php echo isset($row['b_content'])?$row['b_content']:null?></textarea>
 
 					<button type="submit" class="btnSubmit btn"> <?php echo isset($bNo)?'수정':'작성'?> </button>
 						
