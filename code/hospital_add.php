@@ -14,10 +14,8 @@
 	<meta charset="utf-8" />
 
 	<title>병원정보 추가</title>
+	
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
 
 </head>
 	
@@ -41,8 +39,6 @@
 			<form action="./hos_add_update.php" method="post">
 
 				<table id="boardWrite">
-
-					<caption class="readHide">병원정보 추가</caption>
 
 					<tbody>
 
