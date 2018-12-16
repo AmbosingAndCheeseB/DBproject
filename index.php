@@ -54,20 +54,12 @@ session_start();
       <select name="searchColumn" class="select">
         <option value="h_name" selected="selected">병원이름/진료과목</option>
         <option value="h_symptom">증상/내용</option>
+		<option value="h_map">지도 검색</option>
       </select>
       <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
       <input type="text" name="search" class="Search-box" autocomplete="off">
     </form>
 </div>
-
-	
-<div id="searchbox" class="container" style="margin: 250px auto 50px auto; width: 800px">
-	<form method="get" action="index.php" class = "Search">
-      <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
-      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 2.0em" autocomplete="off">
-    </form>
-</div>
-
 	
 
 <?php 
@@ -271,7 +263,7 @@ session_start();
 	
 
 	</script>
-	<p>마커를 한번 클릭하면 병원 정보가 나타나고, 두번 클릭하면 사라집니다.
+	<p>마커를 한번 클릭하면 병원 정보가 나타나고, 한번 더 클릭하면 사라집니다.
 	</p>
 
  

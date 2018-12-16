@@ -34,7 +34,9 @@
                  }
                      
 			}
-                  
+		if($_GET["searchColumn"]=="h_map"){
+			echo "<meta http-equiv='refresh' content='0 url=/termprj/s201615383/index.php?map_search=".$search."'>";
+		}
                   
     }
 	
@@ -269,7 +271,7 @@
 												<tr>
 													<td class = 'hosp_id'><?php echo $s_result[0]; ?></td>
 													<td class = 'hosp_name'> <a href='detail.php?h_id=<?php echo $s_result[0]; ?>'> <?php echo $s_result[1]; ?></a></td>
-													<td class = 'call_num'> <?php echo $s_result[2]; ?>] </td>
+													<td class = 'call_num'> <?php echo $s_result[2]; ?> </td>
 													<td class = 'hosp_addr'><?php echo $s_result[3]; ?> </td>
 											 <?php
 													if($_SESSION['authority']==77)
