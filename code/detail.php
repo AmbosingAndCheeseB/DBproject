@@ -74,42 +74,40 @@
 	
 </ul>		
 		
-	<div class = "container">
-		<div class = "content">
+	<table class="jbtable">
 		
+		<tr>
+			<th>병원 이름</th>
+		</tr>
 
-		<h3>병원 이름</h3>
-		<p>
+		<tr>
+			<td><?php echo $info1[1];?></td>
+		</tr>
 
-		<p> 
-
-			<br><br>
-			<?php echo $info1[1];?></p>
+		<tr>
+			<th>전화번호</th>
+		</tr>
+			
+		<tr>
+			<td><?php echo $info1[2];?></td>
+		</tr>
 		
-		<br>
-		<br>
-		<br>
-		<hr>
+		<tr>
+			<th>주소</th>
+		</tr>
 
+		<tr>
+			<td><?php echo $info1[3];?> </td>
+		</tr>
 
-		<h3>전화번호</h3>
-
-		<p>
-			<br><br><?php echo $info1[2];?></p>
-			<br>
+		<tr>
+			<th>병원 진료시간</th>
+		</tr>
 		
-			<hr>
-		<h3>주소</h3>
-
-			<br><br><?php echo $info1[3];?> </p>
-		
-
-		<br>
-		<hr>
-
-		<h3>병원 진료시간</h3>
-		<table style = "width=100%">
-			<tr>
+		<tr>
+			<td>
+				<table style = "width=100%">
+					<tr>
 
 					<th scope="col" class="hos_mon">월요일</th>
 
@@ -127,9 +125,9 @@
 				
 					<th scope="col" class="hos_holi">공휴일</th>
 																	  
-				</tr>
+					</tr>
 			
-			<tr>
+				<tr>
 				
 				<td class = "hos_mon"><?php echo " ".$info1[4]." ";?></td>
 				
@@ -147,20 +145,16 @@
 				
 				<td class = "hos_holi"><?php echo " ".$info1[11]." ";?></td>
 		
-			</tr>
+				</tr>
 			</table>
-
+			</td>
+		</tr>
 		
-		<br>
-		<br>
-		<br>
-		<hr>
-
-		<h3>병원 위치 정보</h3>
-
-	
-
+		<tr>
+			<th>병원 위치 정보</th>
+		</tr>
 		
+	<tr><td>	
 	<div id="map" style="width:100%;height:350px;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
 	<script>
@@ -203,11 +197,13 @@
 	
 		});    
 	</script>
+		</td></tr>
 		
-		<br>
-		<br>
-		<hr>
-		<h3>해당 병원 후기 게시판</h3>
+		<tr>
+			<th>해당 병원 후기 게시판</th>
+		</tr>
+
+		<tr><td>
 		<table style = "width=100%">
 			<tr>
 
@@ -261,19 +257,17 @@
 				?>
 		
 			</table>
-
+			</td></tr>		
 				
+		</table>
 		
-
-
-				<?php
+						<?php
 				if(isset($_SESSION['authority']))
 				{
 					if($_SESSION["authority"] == 77)
 					{
 						?>
 						<a href="./hospital_modify.php?hospital_id=<?php echo $hospital?>">수정</a>
-			
 			
 						<a href="./hospital_delete.php?hospital_id=<?php echo $hospital?>">삭제</a>
 						<?php
@@ -284,10 +278,7 @@
 			
 			<INPUT type="button" name="back_btn" value="목록" onclick = 'back()'>
 			
-			</div>
-		</div>
-			
-		</body>
+	</body>
 
 </html>
 	
