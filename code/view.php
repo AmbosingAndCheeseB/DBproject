@@ -113,7 +113,7 @@
 
 		<tr>
 			<th scope="row">내용</th>
-			<td><?php echo $row['b_content']?></td>
+			<td><?php echo nl2br($row['b_content']);?></td>
 		</tr>
 
 		<tr>
@@ -127,10 +127,12 @@
 			
 			while($row3 = $result3 ->fetch_assoc())
 			{
-				?><p><?php echo $row3['c_content'];?></p>
-				<p><?php echo $row3['user_id'];?></p>
-				<p><?php echo $row3['c_date'];?></p>
+				?>
+				
+				<p style= "text-align: left">작성자 : <?php echo $row3['user_id'];?>  </p>
+				<p style = "text-align: right"> 날짜 : <?php echo $row3['c_date'];?></p>
 				&nbsp;&nbsp;
+				<p>내용 : <?php echo $row3['c_content'];?></p>
 		
 				<a href = "./delete_comment.php?board_num=<?php echo $bNo;?>&c_num=<?php echo $row3['c_num'];?>"> [삭제]</a>
 
