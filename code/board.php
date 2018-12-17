@@ -159,7 +159,7 @@
 
 		if($i == $page) {
 
-			$paging .= '<li class="blocks active">' . $i . '</li>';
+			$paging .= '<li class="active">' . $i . '</li>';
 
 		} else {
 
