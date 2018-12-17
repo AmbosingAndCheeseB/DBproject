@@ -24,50 +24,45 @@ session_start();
 
 	
 <ul class="menubar">
-  <li><a href="index.php">홈</a></li>
+  <li><a href="index.php" style="background: #DBF0F8">홈</a></li>
   <li><a href="code/board.php">게시판</a></li>
   <li><a href="code/hospital.php">병원 정보</a></li>
 	
 	<?php
 		if(!$_SESSION['is_login']){
-			echo ' <li><a href="code/login.php">로그인</a></li>
-				<li><a href="code/signup.php">회원가입</a></li>';
+			echo ' <li style = "float:right"><a href="code/login.php">로그인</a></li>
+				<li style = "float:right"><a href="code/signup.php">회원가입</a></li>';
 		}
 		else if($_SESSION['is_login']){
-			echo $_SESSION["nickname"].' 님 환영합니다!';
-			
 
 			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
-				echo '<li><a href="code/user_manage.php">유저 관리 페이지</a><li>';
+				echo '<li style = "float:right"><a href="code/user_manage.php">유저 관리 페이지</a><li>';
 			}
 			
 			
-			echo '<li><a href="code/logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><a href="code/logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>';
 		}
 	?>
 	
 </ul>
-		
+	
+<div style="text-align: center">
+	<img src="image/logo.png" style="width: 1400px; margin: 150px auto 0px auto">
+</div>
+	
 <div id="searchbox" class="container">
 	<form method="get" action="code/search_result.php" class = "Search">
 	
       <select name="searchColumn" class="select">
         <option value="h_name" selected="selected">병원이름/진료과목</option>
         <option value="h_symptom">증상/내용</option>
+		<option value="h_map">지도 검색 (병원 이름)</option>
       </select>
       <button id="sr" class="Search-label" for="Search-box"><i class="fa fa-search"></i></button>
       <input type="text" name="search" class="Search-box" autocomplete="off">
     </form>
 </div>
-
-	
-<div id="searchbox" class="container" style="margin: 250px auto 50px auto; width: 800px">
-	<form method="get" action="index.php" class = "Search">
-      <button id="sr" class="Search-label" style="font-size: 30px" for="Search-box"><i class="fa fa-search"></i></button>
-      <input type="text" name="map_search" class="Search-box" style="height: 60px; font-size: 2.0em" autocomplete="off">
-    </form>
-</div>
-
 	
 
 <?php 
@@ -271,7 +266,7 @@ session_start();
 	
 
 	</script>
-	<p>마커를 한번 클릭하면 병원 정보가 나타나고, 두번 클릭하면 사라집니다.
+	<p>마커를 한번 클릭하면 병원 정보가 나타나고, 한번 더 클릭하면 사라집니다.
 	</p>
 
  

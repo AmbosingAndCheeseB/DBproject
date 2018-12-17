@@ -17,16 +17,25 @@ body {
 	z-index: 100;
 }
 .menubar>li {
+	float: left;
   display: inline-block;
 }
-.menubar>li>a {
+.menubar>li>a{
   display: block;
   text-decoration: none;
   padding: 10px 20px;
   color: #092E84;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 .menubar>li>a:hover {
   background:#AEE4FF;
+}
+
+#nick {
+	display: block;
+  padding: 10px 20px;
+  color:#4925D7;
+	font-size: 1.3em;
+	font-family: 'Noto Sans KR', sans-serif;
 }

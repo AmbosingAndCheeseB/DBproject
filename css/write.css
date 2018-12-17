@@ -8,11 +8,11 @@
 }
 
 section {
-  width: 500px;
-	height: 600px;
+  width: 1000px;
+	height: 800px;
   background: white;
-  padding: 15px 30px 30px;
-  margin: 40px auto auto;
+  padding: 20px 30px 30px;
+  margin: 100px auto auto;
   text-align: center;
   border-radius: 10px;
 }
@@ -20,7 +20,7 @@ section {
 h1 {
   font-size: 40px;
   font-weight: 100;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -39,28 +39,37 @@ input {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-input[type=radio] {
-	width:25px;
-	height:25px;
-}
-
-label {
+textarea {
+  width: 100%;
+  background: #bdc3c7;
+  border: none;
+  height: 400px;
+	padding-left: 10px;
+	padding-right: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 23px;
+  color:#2B2B2B;
 	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 25px;
 }
 
 input:focus {
   outline: none;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 button {
   width: 49%;
-  height: 70px;
+  height: 60px;
   border: none;
   background: #3498db;
   color: #ecf0f1;
   font-size: 30px;
-  margin: 30px auto auto;
+  margin: 20px auto auto;
   border-radius: 5px;
   border-bottom: 3px solid #2980b9;
 	font-family: 'Noto Sans KR', sans-serif;

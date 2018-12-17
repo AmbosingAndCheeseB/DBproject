@@ -28,57 +28,74 @@
 	<meta charset="utf-8" />
 
 	<title>병원 상세정보</title>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/detail.css">
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
 
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
 
 </head>
+	
 	<script>
 		function back()
 		{
 			history.back();
 		}
 	</script>
-	<body>
-		<h2>병원 상세정보</h2>
-		<br>
-		<br>
-		<hr>
-
-
-		<h3>병원 이름</h3>
-		<p>
-
-		<p> 
-
-			<br><br>
-			<?php echo $info1[1];?></p>
-		
-		<br>
-		<br>
-		<br>
-		<hr>
-
 	
-		<h3>전화번호</h3>
-
-		<p>
-			<br><br><?php echo $info1[2];?></p>
-			<br>
+	<body>
 		
-			<hr>
-		<h3>주소</h3>
+<ul class="menubar">
+  <li><a href="../index.php">홈</a></li>
+  <li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	
+	<?php
+		if(!$_SESSION['is_login']){
+			echo ' <li style = "float:right"><a href="login.php">로그인</a></li>
+				<li style = "float:right"><a href="signup.php">회원가입</a></li>';
+		}
+		else if($_SESSION['is_login']){
 
-			<br><br><?php echo $info1[3];?> </p>
+			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
+				echo '<li style = "float:right"><a href="user_manage.php">유저 관리 페이지</a><li>';
+			}
+			
+			
+			echo '<li style = "float:right"><a href="logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>';
+		}
+	?>
+	
+</ul>		
 		
+	<table class="jbtable">
+		
+		<tr>
+			<th scope="row">병원 이름</th>
+			<td><?php echo $info1[1];?></td>
+		</tr>
 
-		<br>
-		<hr>
+		<tr>
+			<th scope="row">전화번호</th>
+			<td><?php echo $info1[2];?></td>
+		</tr>
+		
+		<tr>
+			<th scope="row">주소</th>
+			<td><?php echo $info1[3];?> </td>
+		</tr>
 
-		<h3>병원 진료시간</h3>
-		<table style = "width=100%">
-			<tr>
+
+		<tr>
+			<th scope="row">병원 진료시간</th>
+			<td>
+				<table style = "width=100%">
+					<tr>
 
 					<th scope="col" class="hos_mon">월요일</th>
 
@@ -96,9 +113,9 @@
 				
 					<th scope="col" class="hos_holi">공휴일</th>
 																	  
-				</tr>
+					</tr>
 			
-			<tr>
+				<tr>
 				
 				<td class = "hos_mon"><?php echo " ".$info1[4]." ";?></td>
 				
@@ -116,21 +133,14 @@
 				
 				<td class = "hos_holi"><?php echo " ".$info1[11]." ";?></td>
 		
-			</tr>
+				</tr>
 			</table>
-
-
+			</td>
+		</tr>
 		
-		<br>
-		<br>
-		<br>
-		<hr>
-
-		<h3>병원 위치 정보</h3>
-
-	
-
-		
+		<tr>
+			<th>병원 위치 정보</th>
+			<td>	
 	<div id="map" style="width:100%;height:350px;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f722b2f37d3075fced8b4fa988359be7&libraries=services"></script>
 	<script>
@@ -173,11 +183,12 @@
 	
 		});    
 	</script>
+		</td>
+		</tr>
 		
-		<br>
-		<br>
-		<hr>
-		<h3>해당 병원 후기 게시판</h3>
+		<tr>
+			<th>해당 병원 후기 게시판</th>
+			<td>
 		<table style = "width=100%">
 			<tr>
 
@@ -231,22 +242,18 @@
 				?>
 		
 			</table>
-
+			</td>
+		</tr>		
 				
+		</table>
 		
-		
-		
-		<div class="btnSet">
-
-
-				<?php
+						<?php
 				if(isset($_SESSION['authority']))
 				{
 					if($_SESSION["authority"] == 77)
 					{
 						?>
 						<a href="./hospital_modify.php?hospital_id=<?php echo $hospital?>">수정</a>
-			
 			
 						<a href="./hospital_delete.php?hospital_id=<?php echo $hospital?>">삭제</a>
 						<?php
@@ -257,9 +264,7 @@
 			
 			<INPUT type="button" name="back_btn" value="목록" onclick = 'back()'>
 			
-			
-			
-		</body>
+	</body>
 
 </html>
 	

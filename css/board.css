@@ -9,26 +9,35 @@
     font-size: 10px;
     vertical-align:middle;
     padding: 10px;
-    width: 1600px;
-	margin-top: 200px;
+    width: 1500px;
+	margin-top: 40px;
+	margin-bottom: 50px;
 	margin-left: auto;
 	margin-right: auto;
-    text-align: center;
+    text-align: left;
     
 }
 
+.jbtable tr:hover {
+	background:#B3DEEF;
+}
+
 .jbtable td, .jbtable th{
-    font-size: 1.4em;
-    padding: 8px 20px;
+    font-size: 2.0em;
+    padding: 8px;
 }
 
 .jbtable th {
     color: #004990;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.8em;
+    font-size: 2.4em;
     font-weight: bold;
     color: #004990;
     background-color: #f1f5f8;
+}
+
+.jbtable td {
+	line-height: 40px;
 }
 
 .jbtable a {
@@ -66,4 +75,17 @@
 }
 #pagination a.active{
   background-color: #4CAF50;
+}
+
+.btn {
+	width: 80px;
+  height: 50px;
+  border: none;
+  background:#BCE5FF;
+  color:#1D6DCF;
+  font-size: 20px;
+  border-radius: 5px;
+  border-bottom: 3px solid #618BA6;
+	font-family: 'Noto Sans KR', sans-serif;
+	display: block;
 }

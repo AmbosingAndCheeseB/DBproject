@@ -1,5 +1,6 @@
 <?php
 
+	session_start();
 	require_once("./dbconfig.php");
 	
 	
@@ -33,22 +34,31 @@
 	<meta charset="utf-8" />
 
 	<title>후기 자유게시판</title>
-
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
+	
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/write.css">
 
 </head>
 
 <body>
 
-	<article class="boardArticle">
+<ul class="menubar">
+	<li><a href="../index.php">홈</a></li>
+	<li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	<li style = "float:right"><a href="logout.php">로그아웃</a><li>
+	<?php echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>'; ?>
+</ul>
+	
+	<section>
+		<h1>게시글 작성</h1>
 
-		<h3>후기 자유게시판 글쓰기</h3>
-
-		<div id="boardWrite">
-
-			<form action="./write_update.php" method="post">
+			<form action="write_update.php" method="post">
 				<?php
 
 					if(isset($bNo)) {
@@ -59,50 +69,16 @@
 
 				?>
 
-				<table id="boardWrite">
+							<input type="text" name="Title" id="Title" autocomplete="off" placeholder = "제목" value = "<?php echo isset($row['title'])?$row['title']:null?>" required>
 
-					<caption class="readHide">후기 자유게시판 글쓰기</caption>
+							<textarea name="bContent" id="bContent" placeholder = "내용" required><?php echo isset($row['b_content'])?$row['b_content']:null?></textarea>
 
-					<tbody>
-
+					<button type="submit"> <?php echo isset($bNo)?'수정':'작성'?> </button>
 						
-
-
-						<tr>
-
-							<th scope="row"><label for="Title">제목</label></th>
-
-							<td class="title"><input type="text" name="Title" id="Title" value = "<?php echo isset($row['title'])?$row['title']:null?>"></td>
-
-						</tr>
-
-						<tr>
-
-							<th scope="row"><label for="bContent">내용</label></th>
-
-							<td class="content"><textarea name="bContent" id="bContent"> <?php echo isset($row['b_content'])?$row['b_content']:null?></textarea></td>
-
-						</tr>
-
-					</tbody>
-
-				</table>
-
-				<div class="btnSet">
-
-					<button type="submit" class="btnSubmit btn"> <?php echo isset($bNo)?'수정':'작성'?> </button>
-						
-
-					<a href="./board.php" class="btnList btn">목록</a>
-
-				</div>
+					<button type="button" onclick="location.href= 'board.php' ">목록</button>
 
 			</form>
-
-		</div>
-
-	</article>
-
+	</section>
 </body>
 
 </html>

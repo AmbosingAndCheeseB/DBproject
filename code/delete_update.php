@@ -21,7 +21,7 @@
 		
 		echo "<script>
 				alert(\"글이 삭제되었습니다.\");
-				document.location.href = 'http://210.117.181.21/termprj/s201615383/board.php';
+				document.location.href = 'http://210.117.181.21/termprj/s201615383/code/board.php';
 				</script>";
 		
 

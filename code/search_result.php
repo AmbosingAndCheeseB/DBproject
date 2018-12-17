@@ -34,7 +34,9 @@
                  }
                      
 			}
-                  
+		if($_GET["searchColumn"]=="h_map"){
+			echo "<meta http-equiv='refresh' content='0 url=/termprj/s201615383/index.php?map_search=".$search."'>";
+		}
                   
     }
 	
@@ -213,23 +215,31 @@
 <ul class="menubar">
   <li><a href="../index.php">홈</a></li>
   <li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
 	
 	<?php
 		if(!$_SESSION['is_login']){
-			echo ' <li><a href="login.php">로그인</a></li>
-				<li><a href="signup.php">회원가입</a></li>';
+			echo ' <li style = "float:right"><a href="login.php">로그인</a></li>
+				<li style = "float:right"><a href="signup.php">회원가입</a></li>';
 		}
 		else if($_SESSION['is_login']){
+
 			if($_SESSION['userid']=='admin'&& $_SESSION['authority']==77){
-				echo '<li><a href="user_manage.php">유저 관리 페이지</a><li>';
+				echo '<li style = "float:right"><a href="user_manage.php">유저 관리 페이지</a><li>';
 			}
 			
-			echo '<li><a href="logout.php">로그아웃</a><li>';
+			
+			echo '<li style = "float:right"><a href="logout.php">로그아웃</a><li>';
+			echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>';
 		}
 	?>
 	
 </ul>
 
+<div style="text-align: left">
+	<img src="../image/logo.png" style="width:  600px; margin: 100px auto 0px auto">
+</div>
+	
 		<table class="jbtable" cellspacing="0" cellpadding="0" >
 
 				<tr>
@@ -245,9 +255,9 @@
 					if($_SESSION['authority']==77)
 					{
 						?>
-					<th scope="col">수정</th>
+					<th scope="col"></th>
 					
-					<th scope="col">삭제</th>
+					<th scope="col"></th>
 					
 					<?php
 					}
@@ -269,17 +279,17 @@
 												<tr>
 													<td class = 'hosp_id'><?php echo $s_result[0]; ?></td>
 													<td class = 'hosp_name'> <a href='detail.php?h_id=<?php echo $s_result[0]; ?>'> <?php echo $s_result[1]; ?></a></td>
-													<td class = 'call_num'> <?php echo $s_result[2]; ?>] </td>
+													<td class = 'call_num'> <?php echo $s_result[2]; ?> </td>
 													<td class = 'hosp_addr'><?php echo $s_result[3]; ?> </td>
 											 <?php
 													if($_SESSION['authority']==77)
 													{
 														?>
-														<td class="hos_modi"><input type="button" value = "병원정보 수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
+														<td class="hos_modi"><input type="button" class = "btn" style="font-size: 20px; width:60px; height: 40px" value = "수정" onclick = "location.href = 'hospital_modify.php?hospital_id=<?php
 														echo $s_result[0];
 														?>'"></td>
 
-														<td class="hos_dele"><input type="button" value = "병원정보 삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
+														<td class="hos_dele"><input type="button" class = "btn" style="font-size: 20px; width: 60px; height: 40px" value = "삭제" onclick = "location.href = 'hospital_delete.php?hospital_id=<?php
 															echo $s_result[0];
 														?>'"></td>
 											<?php
@@ -306,20 +316,22 @@
 
 		</table>
 
-
+		
+			<?php
+			if ($_SESSION['authority']==77)
+			{?>
+				<input type="button" value = "병원정보 추가" class="btn" style="width: 150px; margin-left: 1510px" onclick = "location.href = 'hospital_add.php'">
+			<?php
+			}
+			?>
+	
 		<div id="wrap">
 
 			<?php echo $paging ?>
 
 		</div>
-		
-<?php
-			if ($_SESSION['authority']==77)
-			{?>
-				<input type="button" value = "병원정보 추가" onclick = "location.href = 'hospital_add.php'">
-			<?php
-			}
-			?>
+	
+	
 		<div id="searchbox" class="container">
 			<form method="get" action="search_result.php" class = "Search">
 

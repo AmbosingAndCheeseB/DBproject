@@ -1,6 +1,7 @@
 <?php
 
 	require_once("./dbconfig.php");
+	session_start();
 	
 	$hospital_id = $_GET['hospital_id'];
 	
@@ -21,10 +22,13 @@
 	<meta charset="utf-8" />
 
 	<title>병원정보 수정</title>
-
-	<link rel="stylesheet" href="./css/normalize.css" />
-
-	<link rel="stylesheet" href="./css/board.css" />
+	<style>
+		body {
+			background:#DBF0F8;
+		}
+	</style>
+	<link rel= "stylesheet" href="../css/menubar.css">
+	<link rel= "stylesheet" href="../css/detail.css">
 
 </head>
 	
@@ -39,11 +43,13 @@
 	
 <body>
 
-	<article class="boardArticle">
-
-		<h3>병원정보 수정</h3>
-
-		<div id="boardWrite">
+<ul class="menubar">
+	<li><a href="../index.php">홈</a></li>
+	<li><a href="board.php">게시판</a></li>
+	<li><a href="hospital.php">병원 정보</a></li>
+	<li style = "float:right"><a href="logout.php">로그아웃</a><li>
+	<?php echo '<li style = "float:right"><div id = "nick">'.$_SESSION["nickname"].' 님 환영합니다!</div>'; ?>
+</ul>
 
 			<form action="./hos_modi_update.php" method="post">
 				<?php
@@ -56,14 +62,7 @@
 
 				?>
 
-				<table id="boardWrite">
-
-					<caption class="readHide">병원정보 수정</caption>
-
-					<tbody>
-
-						
-
+				<table class="jbtable">
 
 						<tr>
 
@@ -154,8 +153,6 @@
 
 						</tr>
 
-					</tbody>
-
 				</table>
 
 				<div class="btnSet">
@@ -168,10 +165,6 @@
 				</div>
 
 			</form>
-
-		</div>
-
-	</article>
 
 </body>
 

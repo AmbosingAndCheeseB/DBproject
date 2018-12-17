@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:500');
+/* CSS Document */
+
+.jbtable {
+    border-collapse: collapse;
+    color: #454545;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    vertical-align:middle;
+    padding: 10px;
+    width: 1400px;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	margin-left: auto;
+	margin-right: auto;
+    text-align: center;
+    
+}
+
+.jbtable td, .jbtable th{
+    font-size: 1.4em;
+    padding: 8px 20px;
+}
+
+.jbtable th {
+    color: #004990;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #004990;
+    background-color: #f1f5f8;
+}
+
+.jbtable a {
+	text-decoration: none;
+	color: black;
+}
+
+.jbtable input, textarea{
+	width: 80%;
+	border-radius: 10px;
+	border: 0;
+	outline: 0;
+}
