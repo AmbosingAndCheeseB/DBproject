@@ -11,7 +11,7 @@
     padding: 10px;
     width: 1500px;
 	margin-top: 40px;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	margin-left: auto;
 	margin-right: auto;
     text-align: left;
@@ -45,18 +45,17 @@
 	color: black;
 }
 
-#wrap{
-  padding-top: 20px;
-}
 #pagination{
   display: flex;
   justify-content: center;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 .blocks{
   width: 40px;
   line-height: 40px;
   text-align: center;
-  border: 1px solid #DDDDDD;
+  background:white;
+	box-shadow: 0 3px 12px -1px rgba(0, 0, 0, .3);
   display: inline-block;
   text-decoration: none;
   color: black;
@@ -71,10 +70,19 @@
   border-radius: 0 10px 10px 0;
 }
 .blocks:hover{
-  background-color: #DDDDDD;
+  background-color:#CBE3F0;
 }
-#pagination a.active{
-  background-color: #4CAF50;
+
+#pagination a{
+  text-decoration: none;
+}
+
+#pagination a:visited{
+  color: black;
+}
+
+.active{
+	background:#A6CFE6;
 }
 
 .btn {
