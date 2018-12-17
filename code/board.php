@@ -56,11 +56,9 @@
 
 	/* 검색 끝 */
 
-	
 
-	$sql = 'select count(*) as cnt from hospital' . $searchSql;
+	$sql = 'select count(*) as cnt from board' . $searchSql;
 	
-
 
 	$result = $db->query($sql);
 
