@@ -216,6 +216,7 @@
 <head>
 
 	<meta charset="utf-8" />
+	<title>자유게시판</title>
 
 	<link rel= "stylesheet" href="../css/menubar.css">
 	<link rel="stylesheet" href="../css/board.css" />

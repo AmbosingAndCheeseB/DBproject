@@ -9,9 +9,9 @@
 <file name="logout.php" server="210.117.181.21:2018" local="131893528939497763" remote="131893528800000000" Dst="0" />
 <file name="hospital.php" server="210.117.181.21:2018" local="131894071082143929" remote="131894071200000000" Dst="0" />
 <file name="signup.php" server="210.117.181.21:2018//s201615383/" local="131894516549370632" remote="131894516400000000" Dst="0" />
-<file name="login.php" server="210.117.181.21:2018//s201615383/" local="131894516655253760" remote="131894516400000000" Dst="0" />
-<file name="board.php" server="210.117.181.21:2018//s201615383/" local="131894549481394558" remote="131894549400000000" Dst="0" />
-<file name="hospital.php" server="210.117.181.21:2018//s201615383/" local="131894557810049277" remote="131894557800000000" Dst="0" />
+<file name="login.php" server="210.117.181.21:2018//s201615383/" local="131894866942530420" remote="131894866800000000" Dst="0" />
+<file name="board.php" server="210.117.181.21:2018//s201615383/" local="131894867167025304" remote="131894866800000000" Dst="0" />
+<file name="hospital.php" server="210.117.181.21:2018//s201615383/" local="131894866535680237" remote="131894866200000000" Dst="0" />
 <file name="search_result.php" server="210.117.181.21:2018//s201615383/" local="131894559316748390" remote="131894559000000000" Dst="0" />
 <file name="user_manage.php" server="210.117.181.21:2018//s201615383/" local="131894561224118543" remote="131894560800000000" Dst="0" />
 </dwsync>
