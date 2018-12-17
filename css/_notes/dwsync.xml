@@ -4,7 +4,11 @@
 <file name="menubar.css" server="210.117.181.21:2018//s201615383/" local="131893519554101667" remote="131893519200000000" Dst="0" />
 <file name="login.css" server="210.117.181.21:2018//s201615383/" local="131893543849931354" remote="131893543800000000" Dst="0" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 <file name="map.css" server="210.117.181.21:2018" local="131893651178638735" remote="131893650600000000" Dst="0" />
+=======
+<file name="map.css" server="210.117.181.21:2018//s201615383/" local="131894083460418541" remote="131894083200000000" Dst="0" />
+>>>>>>> origin/master
 =======
 <file name="map.css" server="210.117.181.21:2018//s201615383/" local="131894083460418541" remote="131894083200000000" Dst="0" />
 >>>>>>> origin/master
